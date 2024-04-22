@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Backg from "../assets/imgs/bak3.jpg";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 function Home() {
   const [telNumber, setTelNumber] = useState("");
@@ -21,6 +23,21 @@ function Home() {
     }
   };
 
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 1,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 1,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
+  };
+
   return (
     <div
       style={{ backgroundImage: `url('${Backg}')` }}
@@ -28,67 +45,37 @@ function Home() {
     >
       <div className="container mx-auto">
         <br />
-        <div id="demo" className="carousel slide" data-bs-ride="carousel">
-          <div className="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#demo"
-              data-bs-slide-to="0"
-              className="active"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#demo"
-              data-bs-slide-to="1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#demo"
-              data-bs-slide-to="2"
-            ></button>
-          </div>
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060167.png"
-                alt=""
-                className="d-block w-full h-full"
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060670.jpg"
-                className="d-block w-full"
-                alt=""
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060641.jpg"
-                alt=""
-                className="d-block w-full"
-              />
-            </div>
-          </div>
-          <button
-            className="carousel-control-prev"
-            type="button"
-            data-bs-target="#demo"
-            data-bs-slide="prev"
-          >
-            <span className="carousel-control-prev-icon"></span>
-          </button>
-          <button
-            className="carousel-control-next"
-            type="button"
-            data-bs-target="#demo"
-            data-bs-slide="next"
-          >
-            <span className="carousel-control-next-icon"></span>
-          </button>
-        </div>
-        <br />
 
+        <Carousel
+      responsive={responsive}
+      showArrows={false}
+      autoPlay={true}
+      autoPlaySpeed={2000}
+      infinite={true}
+    >
+      <div>
+        <img
+          src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060167.png"
+          alt=""
+          className="d-block w-100"
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060670.jpg"
+          alt=""
+          className="d-block w-100"
+        />
+      </div>
+      <div>
+        <img
+          src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2018/06/2018060641.jpg"
+          alt=""
+          className="d-block w-100"
+        />
+      </div>
+    </Carousel>
+        <br />
 
         <div className="container mx-auto ">
           <div className="row shadow-lg rounded-lg bg-opacity-10 bg-white">
@@ -121,62 +108,86 @@ function Home() {
                 <div className=" grid grid-cols-3 gap-4 w-[1000px]  justify-center items-center mt-4">
                   <div className="  inline-block mx-2 mb-4">
                     <div className="  transition duration-200 ease-linear shadow-md border bg-[#9e9e9e] bg-opacity-20 border-gray-400 rounded-lg p-4 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className=" text-center mt-4 text-2xl font-lato text-gray-700">1</div>
+                      <div className=" text-center mt-4 text-2xl font-lato text-gray-700">
+                        1
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">2</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        2
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">3</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        3
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">4</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        4
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">5</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        5
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">6</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        6
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">7</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        7
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">8</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        8
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">9</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        9
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-[#9e9e9e] bg-opacity-20 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">0</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        0
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-yellow-600 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">C</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        C
+                      </div>
                     </div>
                   </div>
                   <div className="span4  inline-block mx-2 mb-4">
                     <div className="num num transition duration-200 ease-linear shadow-md border border-gray-400 rounded-lg p-4 bg-green-300 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 ">
-                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">Go</div>
+                      <div className="text-center mt-4 text-2xl font-lato text-gray-700">
+                        Go
+                      </div>
                     </div>
                   </div>
                 </div>
