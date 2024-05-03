@@ -8,6 +8,8 @@ import pinmap from "../assets/imgs/pin-map-fill.png";
 import quizimg from "../assets/imgs/quizimg.png";
 import sightsceen from "../assets/imgs/sightsceen.png";
 import top from "../assets/imgs/top.png";
+import about1 from "../assets/imgs/about1.png";
+import about11 from "../assets/imgs/about11.png";
 import React from "react";
 
 function About() {
@@ -52,6 +54,13 @@ function About() {
     },
   ];
 
+  const getSrcByScreenSize = () => {
+    if (window.innerWidth < 768) {
+      return about11; // Provide the source for the small image
+    } else {
+      return about1; // Provide the source for the large image
+    }
+  };
   return (
     <div
       style={
@@ -67,15 +76,15 @@ function About() {
             <div class="backdrop-blur-3xl flex flex-col justify-center items-center w-full overflow-hidden  relative">
               <img
                 alt=""
-                src="https://cdn.s3waas.gov.in/s3248e844336797ec98478f85e7626de4a/uploads/2023/01/2023011740.jpg"
-                class="img-fluid img-thumbnail bg-cover h-[500px] w-[1370px] bg-blend-darken bg-black bg-opacity-40"
+                src={getSrcByScreenSize()}
+                class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] w-[1370px] bg-blend-darken bg-black bg-opacity-40"
               />
 
               {/* <div class="absolute inset-0 bg-[#eccca3] opacity-30"></div> */}
 
               <div
                 id="05"
-                class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-4xl text-center  text-white  font-bold font-poppins "
+                class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
               >
                 Panorama & Science Centre
               </div>
@@ -98,7 +107,7 @@ function About() {
               className="h-[480px] w-[150px] lg:w-[280px] object-contain "
             ></img>
           </div>
-          <div className="absolute hidden md:block  top-[-100px]  right-[0px] ">
+          <div className="absolute hidden md:block  top-[-100px]  right-[-10px] ">
             <img
               src={top}
               className="h-[480px]  w-[150px] lg:w-[280px] object-contain"
@@ -110,12 +119,12 @@ function About() {
             id="blog"
           >
             <h1
-              className="text-4xl text-center heading mt-[50px] "
+              className=" text-3xl md:text-4xl text-center heading mt-[50px] "
               // style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.5)" }}
             >
               Sight <span className="text-[#581e00] ">Description</span>
             </h1>
-            <p className="text-center heading-description py-5 text-lg font-semibold text-[#052e16]">
+            <p className="text-center heading-description py-5 text-[14px] md:text-lg font-semibold text-[#052e16]">
               Check the following details
             </p>
             <div className="container grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center ">
@@ -180,20 +189,20 @@ function About() {
 
           <section className="sub-service pt-10 mt-10 flex flex-col items-center justify-center">
             <h1
-              className="text-4xl text-center heading"
+              className="text-3xl md:text-4xl text-center heading"
               // style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.5)" }}
             >
               Unveiling{" "}
               <span className="text-[#581e00]">the Ultimate Exploration</span>
             </h1>
-            <p className="text-center heading-description py-5 text-lg font-semibold text-[#052e16]">
+            <p className="text-center heading-description py-5 text-[14px] md:text-lg font-semibold text-[#052e16]">
               Your Path to Adventure Awaits!.
             </p>
             <div className="flex flex-wrap gap-30 m-[30px] justify-center items-center">
               {options.map((option, index) => (
                 <div
                   key={index}
-                  className=" flex flex-col items-center cursor-pointer shadow-lg m-2 h-[250px] w-[300px]  transition duration-400 ease-in-out hover:transform hover:-translate-y-1 border-solid rounded-lg p-9"
+                  className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[250px] w-[300px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-9"
                 >
                   <div className="sub-img d-flex flex justify-center">
                     <img
