@@ -49,3 +49,6 @@ my-carousel .dot {
   /* Your hover styles here */
   border-radius: 10px;
 }
+.react-multi-carousel-dot--active button {
+  background-color: #fff;
+}

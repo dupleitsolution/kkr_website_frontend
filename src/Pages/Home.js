@@ -182,7 +182,7 @@ function Home() {
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           onClick={()=>setNumber(1)}
-                          className=" flex justify-center items-center w-[90%]  h-[60px]  transition duration-200 ease-linear shadow-md bord bor rounded-sm p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[90%]  h-[60px]  transition duration-200 ease-linear shadow-md bord bor rounded-sm p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -196,7 +196,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1  ">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                           onClick={()=>setNumber(2)}
                         >
                           <div
@@ -212,7 +212,7 @@ function Home() {
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           onClick={()=>setNumber(3)}
-                          className="flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className="flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -227,7 +227,7 @@ function Home() {
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           onClick={()=>setNumber(4)}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -241,7 +241,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -256,7 +256,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -271,7 +271,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -286,7 +286,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -301,7 +301,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -316,7 +316,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -331,7 +331,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -362,7 +362,7 @@ function Home() {
           </div>
         </div>
         <div className=" flex  mb-[40px] w-full h-[90px] justify-end">
-          <div className="w-[30%]  flex flex-col  justify-center items-center ">
+          <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
 
             {share && <div className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px]  w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "  style={{ borderRadius: "0.375rem" , boxShadow: `rgba(0, 0, 0, 0.4) 1px 1px 7px 1px`,}}>
                            <img className="bg-cover w-[20px]" src={fb}></img>
@@ -372,7 +372,7 @@ function Home() {
               </div>}
             <button
               style={{ borderRadius: "0.375rem" }}
-              className="bg-[#842029]   w-[70%] md:w-[30%] text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px]  text-white"
+              className="bg-[#842029]   w-[70%] md:w-[30%] text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px] hover:bg-gray-600  text-white"
               onClick={() => setShare((p) => !p)}
             >
               Share Now

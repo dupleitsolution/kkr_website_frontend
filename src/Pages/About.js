@@ -1,5 +1,7 @@
 import Dvie from "../assets/imgs/3DVIE.png";
 import Backg from "../assets/imgs/Mback4.jpg";
+import about1 from "../assets/imgs/about1.png";
+import about11 from "../assets/imgs/about11.png";
 import bottom from "../assets/imgs/bottom.png";
 import camera from "../assets/imgs/camera-fill.png";
 import headphones from "../assets/imgs/headphones.png";
@@ -8,8 +10,6 @@ import pinmap from "../assets/imgs/pin-map-fill.png";
 import quizimg from "../assets/imgs/quizimg.png";
 import sightsceen from "../assets/imgs/sightsceen.png";
 import top from "../assets/imgs/top.png";
-import about1 from "../assets/imgs/about1.png";
-import about11 from "../assets/imgs/about11.png";
 import React from "react";
 
 function About() {
@@ -17,7 +17,7 @@ function About() {
     {
       image: headphones,
       title: "Virtual Guide",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
+      link: "https://www.youtube.com/watch?v=UjePZo0O9HU&t=20s",
     },
     {
       image: camera,
@@ -27,7 +27,7 @@ function About() {
     {
       image: Dvie,
       title: "3D View",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
+      link: "https://www.mappls.com/3d@jrvseoao,omqjoasf,lhtllqelaqovsatej,l,f,f,es,f,f,f,zdata",
     },
     {
       image: nearby,
@@ -127,17 +127,17 @@ function About() {
             <p className="text-center heading-description py-5 text-[14px] md:text-lg font-semibold text-[#052e16]">
               Check the following details
             </p>
-            <div className="container grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center ">
-              <div className="bg-[#FBEBCC] w-[400px] flex flex-col items-center  border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1">
-                <div className="mt-[-12px ">
+            <div className="container flex md:flex-row flex-col md:row-cols-3 gap-[40px] justify-center items-center ">
+              <div className="bg-[#FBEBCC] w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1">
+                <div className="blog-img">
                   <img
                     src="https://img.freepik.com/premium-vector/research-marketing-concept-with-creative-team-men-women-projecting-discuss-new-project_87771-23495.jpg?"
                     alt=""
-                    className="w-full h-[300px] "
+                    className="w-full h-[200px]"
                   />
                 </div>
-                <div className="blog-content p-8">
-                  <h1 className="text-xl font-bold text-[#581e00] ">ABOUT</h1>
+                <div className=" mt-3 p-4">
+                  <h1 className="text-xl font-bold text-[#581e00]">ABOUT </h1>
                   <a
                     href="https://kurukshetra.gov.in/panorama/#about"
                     className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]"
@@ -146,13 +146,12 @@ function About() {
                   </a>
                 </div>
               </div>
-
-              <div className="bg-[#FBEBCC] w-[400px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1">
+              <div className="bg-[#FBEBCC] w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1">
                 <div className="blog-img">
                   <img
                     src="https://img.freepik.com/premium-vector/vector-city-map-kanpur-uttar-pradesh-india_509477-337.jpg?"
                     alt=""
-                    className="w-full h-[300px]"
+                    className="w-full h-[200px]"
                   />
                 </div>
                 <div className=" mt-3 p-4">
@@ -165,17 +164,16 @@ function About() {
                   </a>
                 </div>
               </div>
-
-              <div className="bg-[#FBEBCC] w-[400px] border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1 relative overflow-hidden ">
+              <div className="bg-[#FBEBCC] w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1">
                 <div className="blog-img">
                   <img
                     src="https://img.freepik.com/premium-photo/colorful-vector-art-festive-celebration-ai-generated_731790-11320.jpg?"
                     alt=""
-                    className="w-full h-[300px] "
+                    className="w-full h-[200px]"
                   />
                 </div>
-                <div className="blog-content p-8">
-                  <h1 className="text-xl font-bold text-[#581e00]">Event</h1>
+                <div className=" mt-3 p-4">
+                  <h1 className="text-xl font-bold text-[#581e00]">EVENT </h1>
                   <a
                     href="https://kurukshetra.gov.in/events-in-kurukshetra/"
                     className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]"
@@ -202,18 +200,18 @@ function About() {
               {options.map((option, index) => (
                 <div
                   key={index}
-                  className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[250px] w-[300px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-9"
+                  className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
                 >
-                  <div className="sub-img d-flex flex justify-center">
+                  <div className="sub-img  d-flex flex justify-center">
                     <img
                       src={option.image}
                       alt={option.title}
-                      className={`max-w-full w-10 ${
-                        option.image === quizimg ? "h-10" : "h-auto"
-                      } bg-cover mb-8 cover justify-center items-center text-center`}
+                      className={`max-w-full w-25 ${
+                        option.image === quizimg ? "h-[60px]" : "h-[80px]"
+                      } bg-cover mb-4 cover justify-center items-center text-center`}
                     />
                   </div>
-                  <h3 className="text-lg font-semibold mb-8">{option.title}</h3>
+                  <h3 className="text-lg font-semibold mb-4">{option.title}</h3>
                   <p className="text-sm text-gray-500">
                     <a
                       href={option.link}
