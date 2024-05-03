@@ -6,6 +6,9 @@
   height: 40vmin;
   pointer-events: none;
 }
+my-carousel .dot {
+  background-color: rgb(247, 241, 241); /* Change the color to whatever you want */
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

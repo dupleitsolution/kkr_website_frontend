@@ -1,0 +1,51 @@
+my-carousel .dot {
+    background-color: rgb(247, 241, 241); /* Change the color to whatever you want */
+  }
+/* SliderComponent.css */
+.react-card-slider-slide {
+  /* Add your styles here */
+  /* For example: */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.react-card-slider-slide h3 {
+  /* Style for the title */
+  color: #333;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.react-card-slider-slide p {
+  /* Style for the description */
+  color: #666;
+  font-size: 14px;
+}
+
+.swiper-button-next:after{
+  font-size: 30px !important;
+  color: black !important;
+  color: #365314 !important;
+  border-radius: 50%;
+  padding: 10px;
+  
+  font-weight: bold;
+}
+.swiper-button-prev:after{
+  font-size: 30px !important;
+  color: #365314 !important;
+
+  font-weight: bold;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #4e5546; /* Change the color as needed */
+  font-size: 16px !important;
+}
+.swiper-slide:hover {
+  /* Your hover styles here */
+  border-radius: 10px;
+}
