@@ -10,14 +10,15 @@ import pinmap from "../assets/imgs/pin-map-fill.png";
 import quizimg from "../assets/imgs/quizimg.png";
 import sightsceen from "../assets/imgs/sightsceen.png";
 import top from "../assets/imgs/top.png";
-import React from "react";
+import React, { useState } from "react";
+import YoutubeModal from "../Components/YoutubeModal";
 
 function About() {
   const options = [
     {
       image: headphones,
       title: "Virtual Guide",
-      link: "https://www.youtube.com/watch?v=UjePZo0O9HU&t=20s",
+      link: "https://www.youtube.com/embed/UjePZo0O9HU",
     },
     {
       image: camera,
@@ -53,6 +54,8 @@ function About() {
       link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
     },
   ];
+
+  const [iframe,setIframe] = useState(false)
 
   const getSrcByScreenSize = () => {
     if (window.innerWidth < 768) {
@@ -197,46 +200,89 @@ function About() {
               Your Path to Adventure Awaits!.
             </p>
             <div className="flex flex-wrap gap-30 m-[30px] justify-center items-center">
-              {options.map((option, index) => (
-                <div
-                  key={index}
-                  className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
-                >
-                  <div className="sub-img  d-flex flex justify-center">
-                    <img
-                      src={option.image}
-                      alt={option.title}
-                      className={`max-w-full w-25 ${
-                        option.image === quizimg ? "h-[60px]" : "h-[80px]"
-                      } bg-cover mb-4 cover justify-center items-center text-center`}
-                    />
-                  </div>
-                  <h3 className="text-lg font-semibold mb-4">{option.title}</h3>
-                  <p className="text-sm text-gray-500">
-                    <a
-                      href={option.link}
-                      className="flex items-center text-sm  text-blue-600 hover:underline"
+            { iframe &&
+                     <YoutubeModal toggle={()=>setIframe((p)=>!p)}/>
+                     }
+              {options.map((option, index) => {
+                if (option.title == "Virtual Guide") {
+                  return (
+                    <div
+                      key={index}
+                      className="border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
+                      onClick={()=>setIframe((p)=>!p)}
                     >
-                      See our guidelines{" "}
-                      <svg
-                        className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 18 18"
-                      >
-                        <path
-                          stroke="currentColor"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                      {/* Embedded YouTube video */}
+                     
+                      <div className="sub-img  d-flex flex justify-center">
+                        <img
+                          src={option.image}
+                          alt={option.title}
+                          className={`max-w-full w-25 ${
+                            option.image === quizimg ? "h-[60px]" : "h-[80px]"
+                          } bg-cover mb-4 cover justify-center items-center text-center`}
                         />
-                      </svg>
+                      </div>
+                      <h3 className="text-lg font-semibold mb-4">
+                        {option.title}
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        <div
+                          
+                          className="flex items-center text-sm text-blue-600 hover:underline"
+                          onClick={()=>setIframe((p)=>!p)}
+                        >
+                          See our guidelines{" "}
+                          
+                        </div>
+                      </p>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <a
+                      key={index}
+                      className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
+                      href={option.link}
+                    >
+                      <div className="sub-img  d-flex flex justify-center">
+                        <img
+                          src={option.image}
+                          alt={option.title}
+                          className={`max-w-full w-25 ${
+                            option.image === quizimg ? "h-[60px]" : "h-[80px]"
+                          } bg-cover mb-4 cover justify-center items-center text-center`}
+                        />
+                      </div>
+                      <h3 className="text-lg font-semibold mb-4">
+                        {option.title}
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                        <a
+                          href={option.link}
+                          className="flex items-center text-sm  text-blue-600 hover:underline"
+                        >
+                          See our guidelines{" "}
+                          <svg
+                            className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
+                            />
+                          </svg>
+                        </a>
+                      </p>
                     </a>
-                  </p>
-                </div>
-              ))}
+                  );
+                }
+              })}
             </div>
           </section>
         </div>
