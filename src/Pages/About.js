@@ -112,7 +112,7 @@ function About() {
             id="blog"
           >
             <h1
-              className=" text-3xl md:text-4xl text-center heading mt-[50px] "
+              className=" text-xl md:text-[24px] text-center heading mt-[50px] "
               // style={{ textShadow: "2px 2px 3px rgba(0, 0, 0, 0.5)" }}
             >
               Sight <span className="text-[#581e00] ">Description</span>
@@ -185,7 +185,7 @@ function About() {
             </div>
             <section className=" pt-10  mt-10 flex flex-col items-center justify-center   w-full">
             <h1
-              className="text-xl md:text-4xl text-center "
+              className="text-xl md:text-[24px] text-center "
             >
               Unveiling{" "}
               <span className="text-[#581e00]">the Ultimate Exploration</span>

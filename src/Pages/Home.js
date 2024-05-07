@@ -15,6 +15,7 @@ import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [telNumber, setTelNumber] = useState("");
@@ -137,9 +138,17 @@ function Home() {
         <div className="container w-full py-4 max-w-screen-md">
           <div className="  flex flex-col items-center justify-center w-full ">
             <div className=" mx-auto w-full md:w-[60%]  mb-[20px] rounded-lg">
-              <div className="text-center py-1 ">
-                <span className="text-black text-xl">
+              <div className="text-center  flex flex-col justify-center items-center py-1 ">
+                <span className="text-black text-xl md:text-[24px] ">
                   Kurukshetra Tour Guide
+                </span>
+                <span className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] "
+                style={{
+                  borderRadius: "5px",
+                  boxShadow: `rgba(0, 0, 0, 0.2) 0px 2px 2px 0px`,
+                }}
+                >
+                <Link to='/view'>View All</Link>
                 </span>
               </div>
               <div

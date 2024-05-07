@@ -5,6 +5,7 @@ import About from "./Pages/About";
 import About2 from "./Pages/about2";
 import About3 from "./Pages/About3";
 import Footer from "./Pages/Footer";
+import ViewAll from "./Pages/ViewAll";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/view" element={<ViewAll />} />
           <Route path="/about2" element={<About2 />} />
           <Route path="/about3" element={<About3 />} />
         </Routes>
