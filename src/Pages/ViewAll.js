@@ -6,18 +6,21 @@ import IMG11 from "../assets/imgs/Image11.png";
 import IMG22 from "../assets/imgs/Image22.png";
 import IMG33 from "../assets/imgs/Image33.png";
 import Backg from "../assets/imgs/Mback4.jpg";
+import about1 from "../assets/imgs/about1.png";
+import about11 from "../assets/imgs/about11.png";
 import bottom from "../assets/imgs/bottom.png";
 import fb from "../assets/imgs/facebook.svg";
 import inst from "../assets/imgs/instagram.svg";
 import shar from "../assets/imgs/share.svg";
 import top from "../assets/imgs/top.png";
 import twi from "../assets/imgs/twitter.svg";
-import React, { useState } from "react";
-import about1 from "../assets/imgs/about1.png";
-import about11 from "../assets/imgs/about11.png";
+import React, { useEffect, useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import axios from "axios";
 import "./Home.css";
+import API from "../APIroutes";
+import { useNavigate } from "react-router-dom";
 
 const ITEMS_PERPAGE = 10;
 function ViewAll() {
@@ -26,6 +29,9 @@ function ViewAll() {
   const [number, setNumber] = useState("");
   const [page, setPage] = useState(1);
   const [jobs, setJobs] = useState("");
+  const [data, setData] = useState([]);
+ 
+  const navigate = useNavigate();
 
   const totalPages = Math.ceil(61 / ITEMS_PERPAGE);
 
@@ -339,7 +345,7 @@ function ViewAll() {
     },
   ];
 
-  const renderList = placesList.slice(10 * (page - 1), 10 * page);
+  const renderList = data.slice(10 * (page - 1), 10 * page);
 
   const responsive = {
     superLargeDesktop: {
@@ -360,6 +366,23 @@ function ViewAll() {
     },
   };
 
+  const Fetchdata = async () => {
+    try {
+      const fetchdata = await axios.get(API.fetchJobs);
+      console.log(fetchdata);
+      setData(fetchdata.data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    Fetchdata();
+  }, []);
+
+  const onListclick = (id)=>{
+    navigate("/about", { state: id });
+
+  }
   const getSrcByScreenSize1 = () => {
     if (window.innerWidth < 768) {
       return IMG11; // Provide the source for the small image
@@ -394,7 +417,6 @@ function ViewAll() {
     setPage((p) => p - 1);
   };
 
-
   const getSrcByScreenSize = () => {
     if (window.innerWidth < 768) {
       return about11; // Provide the source for the small image
@@ -402,27 +424,28 @@ function ViewAll() {
       return about1; // Provide the source for the large image
     }
   };
+
+  const startingIndex = (page - 1) * ITEMS_PERPAGE;
   return (
     <div className="  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
       <div className="col-md-4 mb-[0px] w-full pb-[px] ">
-          <div class="border-solid border z-0 p-0">
-            <div class="backdrop-blur-3xl flex flex-col justify-center items-center w-full overflow-hidden  relative">
-              <img
-                alt=""
-                src={getSrcByScreenSize()}
-                class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
-              />
+        <div class="border-solid border z-0 p-0">
+          <div class="backdrop-blur-3xl flex flex-col justify-center items-center w-full overflow-hidden  relative">
+            <img
+              alt=""
+              src={getSrcByScreenSize()}
+              class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
+            />
 
-
-              <div
-                id="05"
-                class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
-              >
-                All You Need To Know
-              </div>
+            <div
+              id="05"
+              class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
+            >
+              All You Need To Know
             </div>
           </div>
         </div>
+      </div>
 
       <div
         className="flex flex-col  w-full justify-center items-center relative overflow-hidden 
@@ -459,13 +482,14 @@ function ViewAll() {
                   {/* <h2 className="text-center">List of Places</h2> */}
 
                   <ul className="flex flex-col w-full items-start justify-start ">
-                    {renderList.map((place) => (
+                    {renderList.map((place,index) => (
                       <li
                         className="flex pl-[20px w-full  border-b-2 text-left text-[18px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
-                        key={place.number}
+                        key={index}
+                        onClick={()=>{onListclick(place?.id)}}
                       >
                         <span className=" bg-[#581e00] py-2 w-[15%] text-center text-slate-300">
-                          {place.number}{" "}
+                          {startingIndex + index + 1}{" "}
                         </span>
 
                         <a

@@ -1,37 +1,7 @@
 import React, { useState } from "react";
 
-const YoutubeModal = (props) => {
-  const [isOpen, setIsOpen] = useState(false);
+const PanormicModal = (props) => {
   const [play, setPlay] = useState(1);
-
-  function getEmbedUrl(videoUrl) {
-    // Check if the URL is a YouTube video URL
-    const isYouTubeUrl =
-      /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=)?([^&]+)/.test(
-        videoUrl
-      );
-
-    if (isYouTubeUrl) {
-      // Extract video ID from the YouTube URL
-      const videoId = videoUrl.match(
-        /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=)?([^&]+)/
-      )[1];
-
-      // Construct the embed URL using the extracted video ID
-      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-
-      return embedUrl;
-    } else {
-      // Return the URL as it is if it's not a YouTube video URL
-      return videoUrl;
-    }
-  }
-  const embedUrl = getEmbedUrl(props.src);
-  console.log("embedUrl", embedUrl); // Output: https://www.youtube.com/embed/wi5h8obNWZU
-
-  const toggleModal = () => {
-    setIsOpen(!isOpen);
-  };
 
   const screenWidth = window.innerWidth;
 
@@ -71,15 +41,13 @@ const YoutubeModal = (props) => {
             <iframe
               width={screenWidth >= 768 ? 800 : 309}
               height={screenWidth >= 768 ? 450 : 225}
-              src={embedUrl}
+              src={props.src}
               title="YouTube video player"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
               allowFullScreen
-              muted
             ></iframe>
-
             {/* <div className=" flex justify-between items-center w-[88%] md:w-full bg-slate-700 h-[20px] p-3 rounded-b-xl">
               {!play && (
                 <div
@@ -111,4 +79,4 @@ const YoutubeModal = (props) => {
   );
 };
 
-export default YoutubeModal;
+export default PanormicModal;

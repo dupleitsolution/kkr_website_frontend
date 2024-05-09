@@ -6,21 +6,24 @@ import IMG22 from "../assets/imgs/Image22.png";
 import IMG33 from "../assets/imgs/Image33.png";
 import Backg from "../assets/imgs/Mback4.jpg";
 import bottom from "../assets/imgs/bottom.png";
-import top from "../assets/imgs/top.png";
 import fb from "../assets/imgs/facebook.svg";
-import twi from "../assets/imgs/twitter.svg";
 import inst from "../assets/imgs/instagram.svg";
 import shar from "../assets/imgs/share.svg";
+import top from "../assets/imgs/top.png";
+import twi from "../assets/imgs/twitter.svg";
 import React, { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./Home.css";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function Home() {
   const [telNumber, setTelNumber] = useState("");
   const [share, setShare] = useState(false);
-  const [number ,setNumber]  = useState("");
+  const [number, setNumber] = useState("");
+
+  const navigate = useNavigate();
 
   const handleNumClick = (text) => {
     if (telNumber.length < 2) {
@@ -81,6 +84,11 @@ function Home() {
       return IMG3; // Provide the source for the large image
     }
   };
+
+  const onGoclick = (id) => {
+    navigate("/about", { state: number });
+  };
+
   return (
     <div className="  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
       <div className="w-full ">
@@ -99,7 +107,7 @@ function Home() {
             <img
               src={getSrcByScreenSize1()}
               alt=""
-              className=" d-block w-full  h-[350px] md:h-[250px]  "
+              className=" d-block w-full  h-[350px] md:h-[250px] "
             />
           </div>
           <div>
@@ -142,13 +150,14 @@ function Home() {
                 <span className="text-black text-xl md:text-[24px] ">
                   Kurukshetra Tour Guide
                 </span>
-                <span className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] "
-                style={{
-                  borderRadius: "5px",
-                  boxShadow: `rgba(0, 0, 0, 0.2) 0px 2px 2px 0px`,
-                }}
+                <span
+                  className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] "
+                  style={{
+                    borderRadius: "5px",
+                    boxShadow: `rgba(0, 0, 0, 0.2) 0px 2px 2px 0px`,
+                  }}
                 >
-                <Link to='/view'>View All</Link>
+                  <Link to="/view">View All</Link>
                 </span>
               </div>
               <div
@@ -180,98 +189,140 @@ function Home() {
                       id="telNumber"
                       className="  py- px-4 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-3 mb-1 md:my-5  border-gray-900 rounded-none text-lg font-bold  border-solid h-16 text-center bg-gray-50"
                       value={number}
-                      maxlength="2"
+                      min={0}
+                      max={99}
+                      maxLength={2}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") {
+                          e.preventDefault(); // Prevent form submission
+                          navigate("/about", { state: number });
+                        }
+                      }}
+                      onChange={(e) => {
+                        const inputValue = e.target.value;
+                        const sanitizedValue = inputValue.replace(/\D/g, "");
+                        if (sanitizedValue !== "") {
+                          const parsedValue = parseInt(sanitizedValue, 10);
+                          if (
+                            !isNaN(parsedValue) &&
+                            parsedValue >= 0 &&
+                            parsedValue <= 99
+                          ) {
+                            setNumber(parsedValue);
+                          }
+                        } else {
+                          setNumber("");
+                        }
+                      }}
                       style={{
                         borderRadius: "0.275rem",
                         boxShadow: `rgba(0, 0, 0, 0.1) 1px 1px 7px 1px`,
                       }}
                     />
                     <div className=" w-[90%] grid grid-cols-3 gap-0 md:gap-2   justify-center items-center mb-1 md:mb-2 mt-1 md:mt-4">
-                      <div className=" mx- mb-1  ">
+                      <div
+                        className=" mx- mb-1  "
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "1"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          onClick={()=>setNumber(1)}
                           className=" flex justify-center items-center w-[90%]  h-[60px]  transition duration-200 ease-linear shadow-md bord bor rounded-sm p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
                             className="text-center text-[14px] font-semibold md:text-2xl  text-black"
-                           
                           >
                             1
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1  ">
+                      <div
+                        className="span4  inline-block mx- mb-1   "
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "2"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
-                          onClick={()=>setNumber(2)}
                         >
                           <div
                             style={{ fontWeight: "400" }}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                           
                           >
                             2
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1  ">
+                      <div
+                        className="span4  inline-block mx- mb-1  "
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "3"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          onClick={()=>setNumber(3)}
                           className="flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             3
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "4"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          onClick={()=>setNumber(4)}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                           
                           >
                             4
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "5"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(5)}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             5
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "6"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(6)}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             6
                           </div>
@@ -284,9 +335,10 @@ function Home() {
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(7)}
+                            onClick={() =>
+                              setNumber((p) => (p.length >= 2 ? p : p + "7"))
+                            }
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             7
                           </div>
@@ -299,39 +351,46 @@ function Home() {
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(8)}
+                            onClick={() =>
+                              setNumber((p) => (p.length >= 2 ? p : p + "8"))
+                            }
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             8
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div className="span4  inline-block mx- mb-1"
+                       onClick={() =>
+                        setNumber((p) => (p.length >= 2 ? p : p + "9"))
+                      }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(9)}
+                          
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             9
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "0"))
+                        }
+                      >
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                            onClick={()=>setNumber(0)}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
-                            
                           >
                             0
                           </div>
@@ -345,6 +404,9 @@ function Home() {
                           <div
                             style={{ fontWeight: "400" }}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
+                            onClick={() => {
+                              setNumber((p) => p.substring(0, p.length - 1));
+                            }}
                           >
                             Cancel
                           </div>
@@ -354,6 +416,7 @@ function Home() {
                         <div
                           style={{ borderRadius: "0.275rem" }}
                           className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          onClick={onGoclick}
                         >
                           <div
                             style={{ fontWeight: "400" }}
@@ -372,13 +435,45 @@ function Home() {
         </div>
         <div className=" flex  mb-[40px] w-full h-[90px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
-
-            {share && <div className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px]  w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "  style={{ borderRadius: "0.375rem" , boxShadow: `rgba(0, 0, 0, 0.4) 1px 1px 7px 1px`,}}>
-                           <img className="bg-cover w-[20px]" src={fb}></img>
-                           <img className="bg-cover w-[20px]" src={inst}></img>
-                           <img className="bg-cover w-[20px]" src={twi}></img>
-                           <img className="bg-cover w-[20px]" src={shar}></img>
-              </div>}
+            {share && (
+              <div
+                className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px]  w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "
+                style={{
+                  borderRadius: "0.375rem",
+                  boxShadow: `rgba(0, 0, 0, 0.4) 1px 1px 7px 1px`,
+                }}
+              >
+                <img
+                  className="bg-cover w-[20px]"
+                  src={fb}
+                  onClick={() => {
+                    window.location.href = "https://www.facebook.com/";
+                  }}
+                ></img>
+                <img
+                  className="bg-cover w-[20px]"
+                  src={inst}
+                  onClick={() => {
+                    window.location.href =
+                      "https://www.instagram.com/sem/campaign/signup/?campaign_id=13530338610&extra_1=s%7Cc%7C547419127631%7Ce%7Cinstagram%20%27%7C&placement&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D9303130%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=Cj0KCQjwxeyxBhC7ARIsAC7dS3_lpZBxjoLci5ermXU1r4K5E2SZwthlUhrUecKiKD69YN21L3o0Rt4aAtUBEALw_wcB";
+                  }}
+                ></img>
+                <img
+                  className="bg-cover w-[20px]"
+                  src={twi}
+                  onClick={() => {
+                    window.location.href = "https://twitter.com/?lang=en";
+                  }}
+                ></img>
+                <img
+                  className="bg-cover w-[20px]"
+                  src={shar}
+                  onClick={() => {
+                    window.location.href = "https://www.facebook.com/";
+                  }}
+                ></img>
+              </div>
+            )}
             <button
               style={{ borderRadius: "0.375rem" }}
               className="bg-[#842029]   w-[70%] md:w-[30%] text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px] hover:bg-gray-600  text-white"
