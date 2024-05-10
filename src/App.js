@@ -6,6 +6,7 @@ import About2 from "./Pages/about2";
 import About3 from "./Pages/About3";
 import Footer from "./Pages/Footer";
 import ViewAll from "./Pages/ViewAll";
+import Navbar from "./Pages/Navbar";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Link to='/about2'>About2</Link>
             <Link to='/about3'>About3</Link>
            </nav>  */}
+           <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
