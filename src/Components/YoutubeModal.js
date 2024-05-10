@@ -86,7 +86,7 @@ const YoutubeModal = (props) => {
               <iframe
                 width={screenWidth >= 768 ? 800 : 309}
                 height={screenWidth >= 768 ? 450 : 225}
-                src={embedUrl}
+                src={`${embedUrl}?autoplay=1`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
