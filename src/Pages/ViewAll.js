@@ -33,7 +33,7 @@ function ViewAll() {
  
   const navigate = useNavigate();
 
-  const totalPages = Math.ceil(61 / ITEMS_PERPAGE);
+ // const totalPages = Math.ceil(61 / ITEMS_PERPAGE);
 
   const placesList = [
     {
@@ -345,8 +345,9 @@ function ViewAll() {
     },
   ];
 
-  const renderList = data.slice(10 * (page - 1), 10 * page);
-
+  const renderList = data?.slice(10 * (page - 1), 10 * page);
+  
+  const totalPages = Math.ceil(data.length / ITEMS_PERPAGE);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -482,7 +483,7 @@ function ViewAll() {
                   {/* <h2 className="text-center">List of Places</h2> */}
 
                   <ul className="flex flex-col w-full items-start justify-start ">
-                    {renderList.map((place,index) => (
+                    {renderList?.map((place,index) => (
                       <li
                         className="flex pl-[20px w-full  border-b-2 text-left text-[18px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
                         key={index}

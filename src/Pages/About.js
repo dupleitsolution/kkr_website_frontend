@@ -1,4 +1,5 @@
 import API from "../APIroutes";
+import PanormicModal from "../Components/PanormicModal";
 import YoutubeModal from "../Components/YoutubeModal";
 import Dvie from "../assets/imgs/3DVIE.png";
 import Backg from "../assets/imgs/Mback4.jpg";
@@ -15,7 +16,7 @@ import top from "../assets/imgs/top.png";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import PanormicModal from "../Components/PanormicModal";
+
 function About() {
   const optionss = [
     {
@@ -59,30 +60,40 @@ function About() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+  
   let location = useLocation();
+  let id=location.state;
+
+  useEffect(() => {
+    if (!id) {
+      id = localStorage.getItem("id");
+    }
+    // Store id in localStorage
+    localStorage.setItem("id", id);
+  }, [id]);
 
   const [data, setData] = useState("");
   const [options, setOptions] = useState([]);
-  const [virtualLink,setVirtualLink]=useState(true);
+  const [virtualLink, setVirtualLink] = useState(true);
 
-  function combineLinksByTitle(data) {
+  function combineLinksByTitle(dataa) {
     const result = {};
     const modifiedArray = [];
 
     // Iterate through the array
-    data.forEach((item) => {
+    dataa?.forEach((item) => {
       // Check if the title already exists in the result object
-      if (result[item.title]) {
+      if (result[item?.title]) {
         // If the title exists, add the link as a new property with a numbered suffix
         const linkNumber =
-          Object.keys(result[item.title]).filter((key) =>
+          Object.keys(result[item?.title]).filter((key) =>
             key.startsWith("link")
           ).length + 1;
 
-        result[item.title][`link${linkNumber}`] = item.link;
+        result[item.title][`link${linkNumber}`] = item?.link;
       } else {
         // If the title doesn't exist, create a new property with the title as key
-        result[item.title] = { title: item.title, link1: item.link };
+        result[item?.title] = { title: item?.title, link1: item?.link };
       }
     });
 
@@ -94,9 +105,9 @@ function About() {
 
   const fetchData = async () => {
     try {
-      const fetchTemple = await axios.get(`${API.fetchById}/${location.state}`);
-      console.log("fetchTemple.data.data", fetchTemple.data.data);
-      setData(fetchTemple.data.data);
+      const fetchTemple = await axios.get(`${API.fetchById}/${id}`);
+      console.log("fetchTemple.data.data", fetchTemple?.data?.data);
+      setData(fetchTemple?.data?.data);
 
       setOptions(combineLinksByTitle(fetchTemple?.data?.data?.options));
     } catch (error) {
@@ -110,6 +121,7 @@ function About() {
   }, []);
 
   const [iframe, setIframe] = useState(false);
+  const [ipframe, setIPframe] = useState(false);
   const [url, setUrl] = useState(false);
 
   const getSrcByScreenSize = () => {
@@ -131,7 +143,7 @@ function About() {
       return pinmap;
     } else if (title === "Tour Guide") {
       return sightsceen;
-    } else if (title === "Near By (Directions)" || title === "Near By")  {
+    } else if (title === "Near By (Directions)" || title === "Near By") {
       return nearby;
     } else if (title === "InfoQuest") {
       return quizimg;
@@ -150,7 +162,7 @@ function About() {
                 <img
                   alt=""
                   //src={getSrcByScreenSize()}
-                  src={data.banner}
+                  src={data?.banner}
                   class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
                 />
 
@@ -158,7 +170,7 @@ function About() {
                   id="05"
                   class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
                 >
-                  {data.name}
+                  {data?.name}
                 </div>
               </div>
             </div>
@@ -193,8 +205,9 @@ function About() {
               </p>
               <div className="  flex flex-wrap gap-y-4 md:gap-10  justify-center items-center  md:w-full ">
                 <div className="   max-w-[300px] flex justify-center items-center ">
-                  <a className="bg-[#FBEBCC] w-full p-2 md:w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                   href={data?.about}
+                  <a
+                    className="bg-[#FBEBCC] w-full p-2 md:w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
+                    href={data?.about !== "" ? data?.about : '#'}
                   >
                     <div className="blog-img">
                       <img
@@ -218,8 +231,9 @@ function About() {
                 </div>
 
                 <div className=" w-full flex max-w-[300px]  justify-center items-center">
-                  <a className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                   href={data?.map === "" ? "" : data.map}
+                  <a
+                    className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
+                    href={data?.map === "" ? "" : data?.map}
                   >
                     <div className="blog-img">
                       <img
@@ -231,7 +245,7 @@ function About() {
                     <div className=" mt-3 p-4">
                       <h1 className="text-xl font-bold text-[#581e00]">MAP</h1>
                       <a
-                        href={data?.map === "" ? "" : data.map}
+                        href={data?.map === "" ? "" : data?.map}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         know the exact location
@@ -240,8 +254,9 @@ function About() {
                   </a>
                 </div>
                 <div className="w-full flex max-w-[300px] justify-center  items-center">
-                  <a className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                   href={data.event}
+                  <a
+                    className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
+                    href={data?.event}
                   >
                     <div className="blog-img">
                       <img
@@ -255,7 +270,7 @@ function About() {
                         EVENT{" "}
                       </h1>
                       <a
-                        href={data.event}
+                        href={data?.event}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         Checkout all related events & more
@@ -281,16 +296,14 @@ function About() {
                       toggle={() => setIframe((p) => !p)}
                     />
                   )}
-                     {
-                      iframe &&(
-                        <PanormicModal
-                        src={url}
-                        toggle={() => setIframe((p) => !p)}
-                        />
-                      )
-                     }
+                  {ipframe && (
+                    <PanormicModal
+                      src={url}
+                      toggle={() => setIPframe((p) => !p)}
+                    />
+                  )}
                   {options?.map((option, index) => {
-                    if (option.link === "") {
+                    if (option?.link1 === "" || option?.link1 == "#") {
                       return null; // Skip rendering if link is empty
                     }
                     if (option.title == "Virtual Guide") {
@@ -307,8 +320,8 @@ function About() {
                         >
                           <div className="sub-img  d-flex flex justify-center">
                             <img
-                              src={getImageSource(option.title)}
-                              alt={option.title}
+                              src={getImageSource(option?.title)}
+                              alt={option?.title}
                               className={`max-w-full w-25 ${
                                 option.image === quizimg
                                   ? "h-[60px]"
@@ -319,28 +332,36 @@ function About() {
                           <span className="text-lg font-semibold ">
                             {option.title}
                           </span>
-                          <select
-                            className="flex items-center text-[12px] h-[10%] placeholder:language"
-                            
-                            onChange={(e) => {
-                              e.stopPropagation();
-                              const selectedLanguage = e.target.value;
-                              setVirtualLink((p)=>!p)
-                            
-                            }}
-                          >
-                             <option value="" disabled selected>Select Language</option>
-                            <option value="english"
-                            onClick={(e)=>{
-                              e.stopPropagation();
-                            }}
-                            >English</option>
-                            <option value="hindi"
-                             onClick={(e)=>{
-                              e.stopPropagation();
-                            }}
-                            >Hindi</option>
-                          </select>
+                          {option?.link2?.length > 2 && (
+                            <select
+                              className="flex items-center text-[12px] h-[10%] placeholder:language bg-[#DDDDDD] hover:bg-white"
+                              onChange={(e) => {
+                                e.stopPropagation();
+                                const selectedLanguage = e.target.value;
+                                setVirtualLink((p) => !p);
+                              }}
+                            >
+                              <option value="" disabled selected>
+                                Select Language
+                              </option>
+                              <option
+                                value="english"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                }}
+                              >
+                                English
+                              </option>
+                              <option
+                                value="hindi"
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                }}
+                              >
+                                Hindi
+                              </option>
+                            </select>
+                          )}
 
                           <p className="text-sm text-gray-500">
                             <a
@@ -348,7 +369,9 @@ function About() {
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIframe((p) => !p);
-                                setUrl(virtualLink?option.link1:option.link2);
+                                setUrl(
+                                  virtualLink ? option?.link1 : option?.link2
+                                );
                               }}
                             >
                               See our guidelines{" "}
@@ -357,14 +380,17 @@ function About() {
                         </div>
                       );
                     } else if (option.title == "Panoramic View") {
+                      if (option?.link1 == "" || option?.link1 == "#") {
+                        return null; // Skip rendering if link is empty
+                      }
                       return (
                         <div
                           key={index}
                           className="border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
-                           onClick={() => {
-                            setIframe((prevState) => !prevState);
-                             setUrl(option.link);
-                           }}
+                          // onClick={() => {
+                          //   setIPframe((prevState) => !prevState);
+                          //   setUrl(option.link);
+                          // }}
                         >
                           <div className="sub-img  d-flex flex justify-center">
                             <img
@@ -384,9 +410,9 @@ function About() {
                             <a
                               className="flex items-center text-sm text-blue-600 hover:underline"
                               onClick={(e) => {
-                               // e.stopPropagation();
-                                setIframe((p) => !p);
-                                setUrl(option.link);
+                                // e.stopPropagation();
+                                setIPframe((p) => !p);
+                                setUrl(option.link1);
                               }}
                             >
                               See our guidelines{" "}
@@ -399,25 +425,25 @@ function About() {
                         <a
                           key={index}
                           className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
-                          href={option.link}
+                          href={option.link1}
                         >
                           <div className="sub-img  d-flex flex justify-center">
                             <img
-                              src={getImageSource(option.title)}
-                              alt={option.title}
+                              src={getImageSource(option?.title)}
+                              alt={option?.title}
                               className={`max-w-full w-25 ${
-                                option.image === quizimg
+                                option?.image === quizimg
                                   ? "h-[80px]"
                                   : "h-[80px]"
                               } bg-cover mb-4 cover justify-center items-center text-center`}
                             />
                           </div>
                           <h3 className="text-lg font-semibold mb-4">
-                            {option.title}
+                            {option?.title}
                           </h3>
                           <p className="text-sm text-gray-500">
                             <a
-                              href={option.link}
+                              href={option?.link1}
                               className="flex items-center text-sm  text-blue-600 hover:underline"
                             >
                               See our guidelines{" "}

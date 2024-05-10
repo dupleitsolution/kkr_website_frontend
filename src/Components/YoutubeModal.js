@@ -5,28 +5,42 @@ const YoutubeModal = (props) => {
   const [play, setPlay] = useState(1);
 
   function getEmbedUrl(videoUrl) {
-    // Check if the URL is a YouTube video URL
-    const isYouTubeUrl =
+    // Check if the URL is a YouTube video URL in the standard format
+    const isYouTubeUrl1 =
       /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=)?([^&]+)/.test(
         videoUrl
       );
 
-    if (isYouTubeUrl) {
+    // Check if the URL is a YouTube video URL in the shortened format
+    const isYouTubeUrl2 = /(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^&]+)/.test(
+      videoUrl
+    );
+
+    // Check if the URL is an MP3 link
+    const isMp3Url = /\.mp3$/.test(videoUrl);
+
+    if (isYouTubeUrl1 || isYouTubeUrl2) {
       // Extract video ID from the YouTube URL
-      const videoId = videoUrl.match(
-        /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=)?([^&]+)/
-      )[1];
+      const videoId = isYouTubeUrl1
+        ? videoUrl.match(
+            /(?:https?:\/\/)?(?:www\.)?youtube\.com\/(?:watch\?v=)?([^&]+)/
+          )[1]
+        : videoUrl.match(/(?:https?:\/\/)?(?:www\.)?youtu\.be\/([^&]+)/)[1];
 
       // Construct the embed URL using the extracted video ID
       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
       return embedUrl;
-    } else {
-      // Return the URL as it is if it's not a YouTube video URL
+    } else if (isMp3Url) {
+      // Return the MP3 URL as it is
       return videoUrl;
+    } else {
+      // Return a default value or handle unsupported URL formats
+      return ""; // You can return an empty string or any other default value
     }
   }
-  const embedUrl = getEmbedUrl(props.src);
+
+  const embedUrl = getEmbedUrl(props?.src);
   console.log("embedUrl", embedUrl); // Output: https://www.youtube.com/embed/wi5h8obNWZU
 
   const toggleModal = () => {
@@ -68,18 +82,40 @@ const YoutubeModal = (props) => {
                 X
               </div>
             </div>
-            <iframe
-              width={screenWidth >= 768 ? 800 : 309}
-              height={screenWidth >= 768 ? 450 : 225}
-              src={embedUrl}
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerPolicy="strict-origin-when-cross-origin"
-              allowFullScreen
-              muted
-            ></iframe>
-
+            {embedUrl && embedUrl.includes("youtube") ? (
+              <iframe
+                width={screenWidth >= 768 ? 800 : 309}
+                height={screenWidth >= 768 ? 450 : 225}
+                src={embedUrl}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+                muted
+              ></iframe>
+            ) : (
+              <audio
+                controls
+               
+                style={{
+                  width: screenWidth >= 768 ? 800 : 307,
+                  height: screenWidth >= 768 ? 80 : 60,
+                  background: "black",
+                 
+                }}
+              >
+                <source
+                  style={{
+                    marginBottom: "10px",
+                  }}
+                  className="mb-2"
+                  src={embedUrl}
+                  type="audio/mpeg"
+                />
+                Your browser does not support the audio element.
+              </audio>
+            )}
             {/* <div className=" flex justify-between items-center w-[88%] md:w-full bg-slate-700 h-[20px] p-3 rounded-b-xl">
               {!play && (
                 <div
