@@ -471,8 +471,8 @@ function About() {
                 </div>
               </section>
 
-              <div className="flex text-center items-center justify-center m-2 text-xl text-white rounded-xl w-[5%] bg-[#842029]">
-              <Link className=' flex items-center justify-center text-center' to='/'>Home</Link>
+              <div className="flex text-center items-center justify-center m-2 text-xl hover:bg-slate-600 text-white rounded-xl w-[6%] bg-[#842029]">
+              <Link className=' flex items-center justify-center text-center mb-1 p-1' to='/'>Home</Link>
               </div>
             </section>
           </div>
