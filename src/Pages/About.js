@@ -16,7 +16,7 @@ import top from "../assets/imgs/top.png";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function About() {
   const optionss = [
     {
@@ -470,6 +470,10 @@ function About() {
                   })}
                 </div>
               </section>
+
+              <div className="flex text-center items-center justify-center m-2 text-xl text-white rounded-xl w-[5%] bg-[#842029]">
+              <Link className=' flex items-center justify-center text-center' to='/'>Home</Link>
+              </div>
             </section>
           </div>
         </div>
