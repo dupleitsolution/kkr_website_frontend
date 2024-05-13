@@ -156,6 +156,9 @@ function Home() {
                     borderRadius: "5px",
                     boxShadow: `rgba(0, 0, 0, 0.2) 0px 2px 2px 0px`,
                   }}
+                  onClick={()=>{
+                    localStorage.setItem("page", JSON.stringify(1))
+                  }}
                 >
                   <span className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] ">
                     View All

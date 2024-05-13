@@ -27,7 +27,7 @@ function ViewAll() {
   const [telNumber, setTelNumber] = useState("");
   const [share, setShare] = useState(false);
   const [number, setNumber] = useState("");
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(parseInt(localStorage.getItem("page")));
   const [jobs, setJobs] = useState("");
   const [data, setData] = useState([]);
  
@@ -367,6 +367,10 @@ function ViewAll() {
     },
   };
 
+  useEffect(()=>{
+    localStorage.setItem("page", JSON.stringify(page))
+  },[page])
+
   const Fetchdata = async () => {
     try {
       const fetchdata = await axios.get(API.fetchJobs);
@@ -427,6 +431,13 @@ function ViewAll() {
   };
 
   const startingIndex = (page - 1) * ITEMS_PERPAGE;
+
+  const handleDots=(index)=>{
+    console.log("Index",index)
+    localStorage.setItem("page",JSON.stringify(index))
+  setPage(index)
+  }
+
   return (
     <div className="  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
       <div className="col-md-4 mb-[0px] w-full pb-[px] ">
@@ -540,8 +551,10 @@ function ViewAll() {
             <Pagination
               totalPages={totalPages}
               setPage={setPage}
+              threeDots={handleDots}
               noOfpage={jobs.length / ITEMS_PERPAGE}
-              currentPage={page}
+              //currentPage={page}
+                currentPage={parseInt(localStorage.getItem("page"))}
               onRightclick={handleRightpage}
               onLeftclick={handleLeftpage}
             />

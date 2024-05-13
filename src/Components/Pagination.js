@@ -1,6 +1,6 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
-export default function Pagination({ totalPages, currentPage, setPage }) {
+export default function Pagination({ totalPages, currentPage, setPage,threeDots }) {
   let Pages = new Array(totalPages).fill(1);
 
   return (
@@ -74,7 +74,10 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
                           ? "text-white bg-[#581e00]"
                           : "text-gray-900"
                       } ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
-                      onClick={() => setPage(index + 1)}
+                      onClick={() => {
+                        localStorage.setItem("page",JSON.stringify(index+1))
+                        setPage(index + 1)
+                      }}
                     >
                       {index + 1}
                     </a>
@@ -92,7 +95,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
                           ? "text-white bg-[#581e00]"
                           : "text-gray-900"
                       } ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
-                      onClick={() => setPage(index + 1)}
+                      onClick={() => threeDots(index + 1)}
                     >
                       ...
                     </a>
