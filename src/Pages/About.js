@@ -171,10 +171,12 @@ function About() {
                 Check the following details
               </p>
               <div className="  flex flex-wrap gap-y-4 md:gap-10  justify-center items-center  md:w-full ">
-                <div className="   max-w-[300px] flex justify-center items-center ">
+                <div className="max-w-[300px] flex justify-center items-center">
                   <a
                     className="bg-[#FBEBCC] w-full p-2 md:w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
                     href={data?.about !== "" ? data?.about : "#"}
+                    target={data.about !== "" ? "_blank" : ""}
+                    rel={data?.about !== "" ? "noopener noreferrer" : ""}
                   >
                     <div className="blog-img">
                       <img
@@ -183,9 +185,9 @@ function About() {
                         className="w-full h-[200px]"
                       />
                     </div>
-                    <div className=" mt-3 p-4">
+                    <div className="mt-3 p-4">
                       <h1 className="text-xl font-bold text-[#581e00]">
-                        ABOUT{" "}
+                        ABOUT
                       </h1>
                       <a
                         href={data?.about}
@@ -200,7 +202,8 @@ function About() {
                 <div className=" w-full flex max-w-[300px]  justify-center items-center">
                   <a
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.map === "" ? "" : data?.map}
+                    href={data?.map !== "" ? data?.map : "#"}
+                    target={data?.map !== "" ? "_blank" : ""}
                   >
                     <div className="blog-img">
                       <img
@@ -223,7 +226,8 @@ function About() {
                 <div className="w-full flex max-w-[300px] justify-center  items-center">
                   <a
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.event}
+                    href={data?.event !== "" ? data?.event : "#"}
+                    target={data?.event !== "" ? "_blank" : ""}
                   >
                     <div className="blog-img">
                       <img
@@ -340,6 +344,8 @@ function About() {
                                   virtualLink ? option?.link1 : option?.link2
                                 );
                               }}
+                              target="_blank" // Open link in a new tab
+                              rel="noopener noreferrer" // Add rel attribute for security reasons
                             >
                               See our guidelines{" "}
                             </a>
@@ -381,6 +387,8 @@ function About() {
                                 setIPframe((p) => !p);
                                 setUrl(option.link1);
                               }}
+                              target="_blank" // Open link in a new tab
+                              rel="noopener noreferrer" // Add rel attribute for security reasons
                             >
                               See our guidelines{" "}
                             </a>
@@ -393,6 +401,8 @@ function About() {
                           key={index}
                           className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
                           href={option.link1}
+                          target="_blank" // Open link in a new tab
+                          rel="noopener noreferrer" // Add rel attribute for security reasons
                         >
                           <div className="sub-img  d-flex flex justify-center">
                             <img
@@ -412,6 +422,8 @@ function About() {
                             <a
                               href={option?.link1}
                               className="flex items-center text-sm  text-blue-600 hover:underline"
+                              target="_blank" // Open link in a new tab
+                              rel="noopener noreferrer" // Add rel attribute for security reasons
                             >
                               See our guidelines{" "}
                               <svg

@@ -150,15 +150,17 @@ function Home() {
                 <span className="text-black text-xl md:text-[24px] ">
                   Kurukshetra Tour Guide
                 </span>
-                <span
-                  className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] "
+                <Link
+                  to="/view"
                   style={{
                     borderRadius: "5px",
                     boxShadow: `rgba(0, 0, 0, 0.2) 0px 2px 2px 0px`,
                   }}
                 >
-                  <Link to="/view">View All</Link>
-                </span>
+                  <span className="text-[16px] cursor-pointer m-2 hover:scale-90  w-[20%] ">
+                    View All
+                  </span>
+                </Link>
               </div>
               <div
                 style={{
@@ -328,42 +330,11 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
-                        <div
-                          style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
-                        >
-                          <div
-                            style={{ fontWeight: "400" }}
-                            onClick={() =>
-                              setNumber((p) => (p.length >= 2 ? p : p + "7"))
-                            }
-                            className="text-center text-[14px] md:text-2xl font-lato text-black"
-                          >
-                            7
-                          </div>
-                        </div>
-                      </div>
-                      <div className="span4  inline-block mx- mb-1">
-                        <div
-                          style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
-                        >
-                          <div
-                            style={{ fontWeight: "400" }}
-                            onClick={() =>
-                              setNumber((p) => (p.length >= 2 ? p : p + "8"))
-                            }
-                            className="text-center text-[14px] md:text-2xl font-lato text-black"
-                          >
-                            8
-                          </div>
-                        </div>
-                      </div>
-                      <div className="span4  inline-block mx- mb-1"
-                       onClick={() =>
-                        setNumber((p) => (p.length >= 2 ? p : p + "9"))
-                      }
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "7"))
+                        }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
@@ -371,7 +342,42 @@ function Home() {
                         >
                           <div
                             style={{ fontWeight: "400" }}
-                          
+                            className="text-center text-[14px] md:text-2xl font-lato text-black"
+                          >
+                            7
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "8"))
+                        }
+                      >
+                        <div
+                          style={{ borderRadius: "0.275rem" }}
+                          className="flex justify-center items-center  w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                        >
+                          <div
+                            style={{ fontWeight: "400" }}
+                            className="text-center text-[14px] md:text-2xl font-lato text-black"
+                          >
+                            8
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        className="span4  inline-block mx- mb-1"
+                        onClick={() =>
+                          setNumber((p) => (p.length >= 2 ? p : p + "9"))
+                        }
+                      >
+                        <div
+                          style={{ borderRadius: "0.275rem" }}
+                          className=" flex justify-center items-center w-[90%] h-[60px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                        >
+                          <div
+                            style={{ fontWeight: "400" }}
                             className="text-center text-[14px] md:text-2xl font-lato text-black"
                           >
                             9
@@ -408,7 +414,7 @@ function Home() {
                               setNumber((p) => p.substring(0, p.length - 1));
                             }}
                           >
-                            Cancel
+                            Clear
                           </div>
                         </div>
                       </div>
@@ -433,7 +439,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className=" flex  mb-[40px] w-full h-[90px] justify-end">
+        <div className=" flex  mb-[40px] w-full h-[40px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {share && (
               <div
