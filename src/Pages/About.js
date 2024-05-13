@@ -190,7 +190,9 @@ function About() {
                         ABOUT
                       </h1>
                       <a
-                        href={data?.about}
+                         href={data?.about !== "" ? data?.about : "#"}
+                        target={data.about !== "" ? "_blank" : ""}
+                        rel={data?.about !== "" ? "noopener noreferrer" : ""}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00] hover:text-gray-600"
                       >
                         Get to know more about this temple
@@ -216,6 +218,8 @@ function About() {
                       <h1 className="text-xl font-bold text-[#581e00]">MAP</h1>
                       <a
                         href={data?.map === "" ? "" : data?.map}
+                        
+                        target={data?.map !== "" ? "_blank" : ""}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         know the exact location
@@ -241,7 +245,8 @@ function About() {
                         EVENT{" "}
                       </h1>
                       <a
-                        href={data?.event}
+                         href={data?.event !== "" ? data?.event : "#"}
+                        target={data?.event !== "" ? "_blank" : ""}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         Checkout all related events & more
@@ -357,13 +362,20 @@ function About() {
                         return null; // Skip rendering if link is empty
                       }
                       return (
-                        <div
+                        <a
                           key={index}
                           className="border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
                           // onClick={() => {
                           //   setIPframe((prevState) => !prevState);
                           //   setUrl(option.link);
                           // }}
+                          onClick={(e) => {
+                            // e.stopPropagation();
+                            setIPframe((p) => !p);
+                            setUrl(option.link1);
+                          }}
+                          target="_blank" // Open link in a new tab
+                          rel="noopener noreferrer" // Add rel attribute for security reasons
                         >
                           <div className="sub-img  d-flex flex justify-center">
                             <img
@@ -383,7 +395,7 @@ function About() {
                             <a
                               className="flex items-center text-sm text-blue-600 hover:underline"
                               onClick={(e) => {
-                                // e.stopPropagation();
+                                 e.stopPropagation();
                                 setIPframe((p) => !p);
                                 setUrl(option.link1);
                               }}
@@ -393,7 +405,7 @@ function About() {
                               See our guidelines{" "}
                             </a>
                           </p>
-                        </div>
+                        </a>
                       );
                     } else {
                       return (
