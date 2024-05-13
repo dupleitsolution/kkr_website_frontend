@@ -437,7 +437,7 @@ function Home() {
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {share && (
               <div
-                className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px]  w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "
+                className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px] cursor-pointer w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "
                 style={{
                   borderRadius: "0.375rem",
                   boxShadow: `rgba(0, 0, 0, 0.4) 1px 1px 7px 1px`,
@@ -465,13 +465,13 @@ function Home() {
                     window.location.href = "https://twitter.com/?lang=en";
                   }}
                 ></img>
-                <img
+                {/* <img
                   className="bg-cover w-[20px]"
                   src={shar}
                   onClick={() => {
                     window.location.href = "https://www.facebook.com/";
                   }}
-                ></img>
+                ></img> */}
               </div>
             )}
             <button

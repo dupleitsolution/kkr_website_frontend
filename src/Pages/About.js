@@ -14,55 +14,19 @@ import quizimg from "../assets/imgs/quizimg.png";
 import sightsceen from "../assets/imgs/sightsceen.png";
 import top from "../assets/imgs/top.png";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
+
 function About() {
-  const optionss = [
-    {
-      title: "Virtual Guide",
-      link: "https://www.youtube.com/embed/UjePZo0O9HU?si=ui-ivIKPo-0M8AIM",
-    },
-    {
-      // image: camera,
-      title: "Panoramic View",
-      link: "https://teliportme.com/view/2069514/vr",
-    },
-    {
-      // image: Dvie,
-      title: "3D View",
-      link: "https://www.mappls.com/3d@jrvseoao,omqjoasf,lhtllqelaqovsatej,l,f,f,es,f,f,f,zdata",
-    },
-    {
-      // image: nearby,
-      title: "Sight Seeing",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
-    },
-
-    {
-      // image: pinmap,
-      title: "Near By",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
-    },
-
-    {
-      // image: sightsceen,
-      title: "Tour Guide",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
-    },
-
-    {
-      // image: quizimg,
-      title: "InfoQuest",
-      link: "https://teliportme.com/view/2069514?utm_medium=android&utm_source=share-panorama",
-    },
-  ];
+  const isRun = useRef(false);
+  const [Loading, setLoading] = useState(false);
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-  
+
   let location = useLocation();
-  let id=location.state;
+  let id = location.state;
 
   useEffect(() => {
     if (!id) {
@@ -75,6 +39,7 @@ function About() {
   const [data, setData] = useState("");
   const [options, setOptions] = useState([]);
   const [virtualLink, setVirtualLink] = useState(true);
+  const [apiCall, setApiCall] = useState(true);
 
   function combineLinksByTitle(dataa) {
     const result = {};
@@ -104,33 +69,29 @@ function About() {
   }
 
   const fetchData = async () => {
+    setLoading(true);
     try {
       const fetchTemple = await axios.get(`${API.fetchById}/${id}`);
-      console.log("fetchTemple.data.data", fetchTemple?.data?.data);
       setData(fetchTemple?.data?.data);
-
       setOptions(combineLinksByTitle(fetchTemple?.data?.data?.options));
     } catch (error) {
-      console.log("error", error);
-      //return res.send({ message: "Error" });
+      console.log("Error fetching data:", error);
+    } finally {
+      setLoading(false);
+      setApiCall(false);
     }
   };
 
   useEffect(() => {
+    if (isRun.current) return;
+
+    isRun.current = true;
     fetchData();
   }, []);
 
   const [iframe, setIframe] = useState(false);
   const [ipframe, setIPframe] = useState(false);
   const [url, setUrl] = useState(false);
-
-  const getSrcByScreenSize = () => {
-    if (window.innerWidth < 768) {
-      return about11; // Provide the source for the small image
-    } else {
-      return about1; // Provide the source for the large image
-    }
-  };
 
   const getImageSource = (title) => {
     if (title === "Virtual Guide") {
@@ -153,8 +114,14 @@ function About() {
   };
 
   return (
-    <div className="  flex-col text-center justify-center text-4xl font-semibold bg-[#d57e2f  shadow-l  w-full">
-      {data ? (
+    <>
+      {Loading ? (
+        <div className="flex justify-center items-center h-screen">
+          <div className="h-16 w-16 relative">
+            <div className="absolute top-0 left-0 border-8 border-red-700 border-t-0 border-l-0 rounded-full w-full h-full animate-spin"></div>
+          </div>
+        </div>
+      ) : data ? (
         <div id="05" class=" flex flex-col  items-center justify-center w-full">
           <div className="col-md-4 mb-[0px] w-full pb-[px] ">
             <div class="border-solid border z-0 p-0">
@@ -207,11 +174,11 @@ function About() {
                 <div className="   max-w-[300px] flex justify-center items-center ">
                   <a
                     className="bg-[#FBEBCC] w-full p-2 md:w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.about !== "" ? data?.about : '#'}
+                    href={data?.about !== "" ? data?.about : "#"}
                   >
                     <div className="blog-img">
                       <img
-                        src="https://img.freepik.com/premium-vector/research-marketing-concept-with-creative-team-men-women-projecting-discuss-new-project_87771-23495.jpg?"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Ankor_Wat_temple.jpg/800px-Ankor_Wat_temple.jpg"
                         alt=""
                         className="w-full h-[200px]"
                       />
@@ -260,7 +227,7 @@ function About() {
                   >
                     <div className="blog-img">
                       <img
-                        src="https://img.freepik.com/premium-photo/colorful-vector-art-festive-celebration-ai-generated_731790-11320.jpg?"
+                        src="https://img.freepik.com/premium-photo/long-shot-back-view-crowd-indian-people-diwali-generative-ai_705708-14867.jpg?size=626&ext=jpg&uid=R139032141&ga=GA1.1.795464967.1712651002&semt=ais_user-customized"
                         alt=""
                         className="w-full h-[200px]"
                       />
@@ -471,18 +438,24 @@ function About() {
                 </div>
               </section>
 
-              <div className="flex text-center items-center justify-center m-2 text-xl hover:bg-slate-600 text-white rounded-xl w-[20%] md:w-[6%] bg-[#842029]">
-              <Link className=' flex items-center justify-center text-center mb-1 p-1' to='/'>Home</Link>
-              </div>
+              {/* <div className="flex text-center items-center justify-center m-2 text-xl hover:bg-slate-600 text-white rounded-xl w-[20%] md:w-[6%] bg-[#842029]">
+                <Link
+                  className=" flex items-center justify-center text-center mb-1 p-1"
+                  to="/"
+                >
+                  Home
+                </Link>
+              </div> */}
             </section>
           </div>
         </div>
       ) : (
-        <div className=" flex items-center justify-center w-full text-center h-[90vh]">
-          No Data Available For This Page
+        // If no temple data is found
+        <div className="flex justify-center items-center h-screen">
+          <p>No tourist Place found!</p>
         </div>
       )}
-    </div>
+    </>
   );
 }
 

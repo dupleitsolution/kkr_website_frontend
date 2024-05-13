@@ -64,8 +64,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
 
             {totalPages > 4 &&
               Pages.map((_, index) => {
-               
-                if (index < currentPage +1 && index > currentPage -3) {
+                if (index < currentPage + 1 && index > currentPage - 3) {
                   return (
                     <a
                       href="#"
@@ -81,8 +80,8 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
                     </a>
                   );
                 } else if (
-                  
-                  index == currentPage +1 || index == currentPage -3
+                  index == currentPage + 1 ||
+                  index == currentPage - 3
                 ) {
                   return (
                     <a
@@ -93,6 +92,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
                           ? "text-white bg-[#581e00]"
                           : "text-gray-900"
                       } ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
+                      onClick={() => setPage(index + 1)}
                     >
                       ...
                     </a>
