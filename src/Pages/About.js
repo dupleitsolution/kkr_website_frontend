@@ -2,6 +2,7 @@ import API from "../APIroutes";
 import PanormicModal from "../Components/PanormicModal";
 import YoutubeModal from "../Components/YoutubeModal";
 import Dvie from "../assets/imgs/3DVIE.png";
+import IMG1 from "../assets/imgs/Image1.png";
 import Backg from "../assets/imgs/Mback4.jpg";
 import about1 from "../assets/imgs/about1.png";
 import about11 from "../assets/imgs/about11.png";
@@ -73,6 +74,7 @@ function About() {
     try {
       const fetchTemple = await axios.get(`${API.fetchById}/${id}`);
       setData(fetchTemple?.data?.data);
+      console.log("DATA", fetchTemple?.data?.data);
       setOptions(combineLinksByTitle(fetchTemple?.data?.data?.options));
     } catch (error) {
       console.log("Error fetching data:", error);
@@ -129,7 +131,7 @@ function About() {
                 <img
                   alt=""
                   //src={getSrcByScreenSize()}
-                  src={data?.banner}
+                  src={data?.banner!==""?data.banner:IMG1}
                   class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
                 />
 
@@ -174,9 +176,9 @@ function About() {
                 <div className="max-w-[300px] flex justify-center items-center">
                   <a
                     className="bg-[#FBEBCC] w-full p-2 md:w-[300px] post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.about !== "" ? data?.about : "#"}
-                    target={data.about !== "" ? "_blank" : ""}
-                    rel={data?.about !== "" ? "noopener noreferrer" : ""}
+                    href={data?.about}
+                    target={data?.about !== "" ? "_blank" : undefined}
+                    rel={data?.about !== "" ? "noopener noreferrer" : undefined}
                   >
                     <div className="blog-img">
                       <img
@@ -190,9 +192,11 @@ function About() {
                         ABOUT
                       </h1>
                       <a
-                         href={data?.about !== "" ? data?.about : "#"}
-                        target={data.about !== "" ? "_blank" : ""}
-                        rel={data?.about !== "" ? "noopener noreferrer" : ""}
+                        href={data?.about}
+                        target={data?.about !== "" ? "_blank" : undefined}
+                        rel={
+                          data?.about !== "" ? "noopener noreferrer" : undefined
+                        }
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00] hover:text-gray-600"
                       >
                         Get to know more about this temple
@@ -204,8 +208,8 @@ function About() {
                 <div className=" w-full flex max-w-[300px]  justify-center items-center">
                   <a
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.map !== "" ? data?.map : "#"}
-                    target={data?.map !== "" ? "_blank" : ""}
+                    href={data?.map}
+                    target={data?.map !== "" ? "_blank" : undefined}
                   >
                     <div className="blog-img">
                       <img
@@ -217,9 +221,8 @@ function About() {
                     <div className=" mt-3 p-4">
                       <h1 className="text-xl font-bold text-[#581e00]">MAP</h1>
                       <a
-                        href={data?.map == "" ? "" : data?.map}
-                        
-                        target={data?.map !== "" ? "_blank" : ""}
+                       href={data?.map}
+                       target={data?.map !== "" ? "_blank" : undefined}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         know the exact location
@@ -230,8 +233,8 @@ function About() {
                 <div className="w-full flex max-w-[300px] justify-center  items-center">
                   <a
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
-                    href={data?.event !== "" ? data?.event : "#"}
-                    target={data?.event !== "" ? "_blank" : ""}
+                    href={data?.event}
+                    target={data?.event !== "" ? "_blank" : undefined}
                   >
                     <div className="blog-img">
                       <img
@@ -245,8 +248,8 @@ function About() {
                         EVENT{" "}
                       </h1>
                       <a
-                         href={data?.event !== "" ? data?.event : "#"}
-                        target={data?.event !== "" ? "_blank" : ""}
+                        href={data?.event}
+                        target={data?.event !== "" ? "_blank" : undefined}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         Checkout all related events & more
@@ -395,7 +398,7 @@ function About() {
                             <a
                               className="flex items-center text-sm text-blue-600 hover:underline"
                               onClick={(e) => {
-                                 e.stopPropagation();
+                                e.stopPropagation();
                                 setIPframe((p) => !p);
                                 setUrl(option.link1);
                               }}
