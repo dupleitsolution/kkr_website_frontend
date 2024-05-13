@@ -217,7 +217,7 @@ function About() {
                     <div className=" mt-3 p-4">
                       <h1 className="text-xl font-bold text-[#581e00]">MAP</h1>
                       <a
-                        href={data?.map === "" ? "" : data?.map}
+                        href={data?.map == "" ? "" : data?.map}
                         
                         target={data?.map !== "" ? "_blank" : ""}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
