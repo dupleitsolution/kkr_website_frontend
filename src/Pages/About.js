@@ -179,6 +179,11 @@ function About() {
                     href={data?.about}
                     target={data?.about !== "" ? "_blank" : undefined}
                     rel={data?.about !== "" ? "noopener noreferrer" : undefined}
+                    onClick={(e)=>{
+                      if (data?.about == "") {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     <div className="blog-img">
                       <img
@@ -210,6 +215,11 @@ function About() {
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
                     href={data?.map}
                     target={data?.map !== "" ? "_blank" : undefined}
+                    onClick={(e)=>{
+                      if (data?.map == "") {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     <div className="blog-img">
                       <img
@@ -235,6 +245,11 @@ function About() {
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
                     href={data?.event}
                     target={data?.event !== "" ? "_blank" : undefined}
+                    onClick={(e)=>{
+                      if (data?.event == "") {
+                        e.preventDefault();
+                      }
+                    }}
                   >
                     <div className="blog-img">
                       <img

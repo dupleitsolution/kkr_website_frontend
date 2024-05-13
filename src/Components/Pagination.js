@@ -7,7 +7,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
     <div className="w-full mx-auto flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
       <div className="flex flex-1 justify-center gap-2 md:hidden">
         <button
-          disabled={currentPage === 1}
+          disabled={currentPage == 1}
           onClick={() => setPage((pre) => pre - 1)}
           className="relative  w-[120px] rounded-md border border-gray-300 bg-white px-4 py-2 
           text-sm font-medium text-gray-700 hover:bg-gray-50"
@@ -16,7 +16,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
         </button>
         <button
           onClick={() => setPage((pre) => pre + 1)}
-          disabled={currentPage === totalPages}
+          disabled={currentPage == totalPages}
           className=" w-[120px] 
            rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
@@ -38,7 +38,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
 
               <button
                 onClick={() => setPage((pre) => pre - 1)}
-                disabled={currentPage === 1}
+                disabled={currentPage == 1}
               >
                 <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
               </button>
@@ -108,7 +108,7 @@ export default function Pagination({ totalPages, currentPage, setPage }) {
 
               <button
                 onClick={() => setPage((pre) => pre + 1)}
-                disabled={currentPage === totalPages}
+                disabled={currentPage == totalPages}
               >
                 <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
               </button>
