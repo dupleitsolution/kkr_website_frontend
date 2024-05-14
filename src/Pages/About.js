@@ -334,6 +334,9 @@ function About() {
                                 const selectedLanguage = e.target.value;
                                 setVirtualLink((p) => !p);
                               }}
+                              onClick={(e)=>{
+                                e.stopPropagation()
+                              }}
                             >
                               <option value="" disabled selected>
                                 Select Language

@@ -1,6 +1,13 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
 
-export default function Pagination({ totalPages, currentPage, setPage,threeDots }) {
+export default function Pagination({
+  totalPages,
+  currentPage,
+  setPage,
+  threeDots,
+  onRightclick,
+  onLeftclick,
+}) {
   let Pages = new Array(totalPages).fill(1);
 
   return (
@@ -36,10 +43,7 @@ export default function Pagination({ totalPages, currentPage, setPage,threeDots 
             >
               <span className="sr-only">Previous</span>
 
-              <button
-                onClick={() => setPage((pre) => pre - 1)}
-                disabled={currentPage == 1}
-              >
+              <button onClick={onLeftclick} disabled={currentPage == 1}>
                 <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </a>
@@ -75,8 +79,8 @@ export default function Pagination({ totalPages, currentPage, setPage,threeDots 
                           : "text-gray-900"
                       } ring-1 ring-inset ring-gray-300 focus:z-20 focus:outline-offset-0`}
                       onClick={() => {
-                        localStorage.setItem("page",JSON.stringify(index+1))
-                        setPage(index + 1)
+                        localStorage.setItem("page", JSON.stringify(index + 1));
+                        setPage(index + 1);
                       }}
                     >
                       {index + 1}
@@ -109,10 +113,7 @@ export default function Pagination({ totalPages, currentPage, setPage,threeDots 
             >
               <span className="sr-only">Next</span>
 
-              <button
-                onClick={() => setPage((pre) => pre + 1)}
-                disabled={currentPage == totalPages}
-              >
+              <button onClick={onRightclick} disabled={currentPage == totalPages}>
                 <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
               </button>
             </a>

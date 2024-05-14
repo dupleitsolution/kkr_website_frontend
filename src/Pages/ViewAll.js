@@ -30,10 +30,10 @@ function ViewAll() {
   const [page, setPage] = useState(parseInt(localStorage.getItem("page")));
   const [jobs, setJobs] = useState("");
   const [data, setData] = useState([]);
- 
+
   const navigate = useNavigate();
 
- // const totalPages = Math.ceil(61 / ITEMS_PERPAGE);
+  // const totalPages = Math.ceil(61 / ITEMS_PERPAGE);
 
   const placesList = [
     {
@@ -346,8 +346,8 @@ function ViewAll() {
   ];
 
   const renderList = data?.slice(10 * (page - 1), 10 * page);
-  
-  const totalPages = Math.ceil(data.length / ITEMS_PERPAGE);
+
+  const totalPages = Math.floor(data.length / ITEMS_PERPAGE);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -367,9 +367,9 @@ function ViewAll() {
     },
   };
 
-  useEffect(()=>{
-    localStorage.setItem("page", JSON.stringify(page))
-  },[page])
+  useEffect(() => {
+    localStorage.setItem("page", JSON.stringify(page));
+  }, [page]);
 
   const Fetchdata = async () => {
     try {
@@ -384,10 +384,9 @@ function ViewAll() {
     Fetchdata();
   }, []);
 
-  const onListclick = (id)=>{
+  const onListclick = (id) => {
     navigate("/about", { state: id });
-
-  }
+  };
   const getSrcByScreenSize1 = () => {
     if (window.innerWidth < 768) {
       return IMG11; // Provide the source for the small image
@@ -413,13 +412,15 @@ function ViewAll() {
   };
 
   const handleRightpage = () => {
-    if (page === 10) return;
-
-    setPage((p) => p + 1);
+    setPage((p) =>{ 
+      localStorage.setItem("page", JSON.stringify(p+1));
+      return p + 1});
   };
+
   const handleLeftpage = () => {
-    if (page === 1) return;
-    setPage((p) => p - 1);
+    setPage((p) =>{ 
+      localStorage.setItem("page", JSON.stringify(p-1));
+      return p - 1});
   };
 
   const getSrcByScreenSize = () => {
@@ -432,11 +433,11 @@ function ViewAll() {
 
   const startingIndex = (page - 1) * ITEMS_PERPAGE;
 
-  const handleDots=(index)=>{
-    console.log("Index",index)
-    localStorage.setItem("page",JSON.stringify(index))
-  setPage(index)
-  }
+  const handleDots = (index) => {
+    console.log("Index", index);
+    localStorage.setItem("page", JSON.stringify(index));
+    setPage(index);
+  };
 
   return (
     <div className="  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
@@ -494,11 +495,13 @@ function ViewAll() {
                   {/* <h2 className="text-center">List of Places</h2> */}
 
                   <ul className="flex flex-col w-full items-start justify-start ">
-                    {renderList?.map((place,index) => (
+                    {renderList?.map((place, index) => (
                       <li
                         className="flex pl-[20px w-full  border-b-2 text-left text-[18px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
                         key={index}
-                        onClick={()=>{onListclick(place?.id)}}
+                        onClick={() => {
+                          onListclick(place?.id);
+                        }}
                       >
                         <span className=" bg-[#581e00] py-2 w-[15%] text-center text-slate-300">
                           {startingIndex + index + 1}{" "}
@@ -554,7 +557,7 @@ function ViewAll() {
               threeDots={handleDots}
               noOfpage={jobs.length / ITEMS_PERPAGE}
               //currentPage={page}
-                currentPage={parseInt(localStorage.getItem("page"))}
+              currentPage={parseInt(localStorage.getItem("page"))}
               onRightclick={handleRightpage}
               onLeftclick={handleLeftpage}
             />
