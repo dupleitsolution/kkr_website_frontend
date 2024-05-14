@@ -347,7 +347,7 @@ function ViewAll() {
 
   const renderList = data?.slice(10 * (page - 1), 10 * page);
 
-  const totalPages = Math.floor(data.length / ITEMS_PERPAGE);
+  const totalPages = Math.ceil(data.length / ITEMS_PERPAGE);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
