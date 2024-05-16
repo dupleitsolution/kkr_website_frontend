@@ -94,7 +94,7 @@ function About() {
   const [iframe, setIframe] = useState(false);
   const [ipframe, setIPframe] = useState(false);
   const [url, setUrl] = useState(false);
-// NEW CHANGE
+// NEW CHANG
   const getImageSource = (title) => {
     if (title === "Virtual Guide") {
       return headphones;
