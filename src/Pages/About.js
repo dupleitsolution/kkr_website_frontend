@@ -94,7 +94,7 @@ function About() {
   const [iframe, setIframe] = useState(false);
   const [ipframe, setIPframe] = useState(false);
   const [url, setUrl] = useState(false);
-
+// NEW CHANGE
   const getImageSource = (title) => {
     if (title === "Virtual Guide") {
       return headphones;
@@ -124,35 +124,44 @@ function About() {
           </div>
         </div>
       ) : data ? (
-        <div id="05" class=" flex flex-col  items-center justify-center w-full">
+        <div
+          id="05"
+          class=" flex flex-col  items-center justify-center w-full "
+        >
           <div className="col-md-4 mb-[0px] w-full pb-[px] ">
-            <div class="border-solid border z-0 p-0">
-              <div class="backdrop-blur-3xl flex flex-col justify-center items-center w-full overflow-hidden  relative">
+            <div class="border-solid borde z-0 p-0">
+              <div class="  flex flex-col justify-center items-center w-full overflow-hidd  relativ">
+
+              <div
+                  id="05"
+                  class=" inse-0 flex items-center -10  text-[#581e00]  justify-center w-full h- p-4 px-4 rounded-lg text-3xl md:text-4xl text-center   font-bold font-poppins "
+                >
+                  {data?.name} 
+                </div>
                 <img
                   alt=""
                   //src={getSrcByScreenSize()}
-                  src={data?.banner!==""?data.banner:IMG1}
-                  class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
+                  src={data?.banner !== "" ? data.banner : IMG1}
+                  class=" bg-[#FBEBCC] border  p-4 img-fluid img-thumbnail -50 object-fit  bg-cove h-[350px] md:h-[350px] min-w-[305px] w-[60%]  bg-blend-darken  "
                 />
 
+               
                 <div
-                  id="05"
-                  class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
-                >
-                  {data?.name}
-                </div>
+                  id=""
+                  class="absolut inset- flex items-center bg-white   justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
+                ></div>
               </div>
             </div>
           </div>
 
-          <div className="overflow-hidden relative w-full">
+          <div className="overflow-hidde relative w-full">
             <div className="absolute  hidden md:block  left-[-10px] bottom-0">
               <img
                 src={bottom}
                 className="h-[480px] w-[150px] lg:w-[280px] object-contain "
               ></img>
             </div>
-            <div className="absolute hidden md:block  top-[-100px]  right-[-10px] ">
+            <div className="absolute hidden md:block  top-[-510px]  right-[-10px] ">
               <img
                 src={top}
                 className="h-[480px]  w-[150px] lg:w-[280px] object-contain"
@@ -179,7 +188,7 @@ function About() {
                     href={data?.about}
                     target={data?.about !== "" ? "_blank" : undefined}
                     rel={data?.about !== "" ? "noopener noreferrer" : undefined}
-                    onClick={(e)=>{
+                    onClick={(e) => {
                       if (data?.about == "") {
                         e.preventDefault();
                       }
@@ -215,7 +224,7 @@ function About() {
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
                     href={data?.map}
                     target={data?.map !== "" ? "_blank" : undefined}
-                    onClick={(e)=>{
+                    onClick={(e) => {
                       if (data?.map == "") {
                         e.preventDefault();
                       }
@@ -231,8 +240,8 @@ function About() {
                     <div className=" mt-3 p-4">
                       <h1 className="text-xl font-bold text-[#581e00]">MAP</h1>
                       <a
-                       href={data?.map}
-                       target={data?.map !== "" ? "_blank" : undefined}
+                        href={data?.map}
+                        target={data?.map !== "" ? "_blank" : undefined}
                         className="text-center heading-description py-5 text-sm font-semibold text-[#581e00]  hover:text-gray-600"
                       >
                         know the exact location
@@ -245,7 +254,7 @@ function About() {
                     className="bg-[#FBEBCC] w-full md:w-[300px] p-2 post border border-sky-blue rounded-lg shadow-md transition duration-400 ease-in-out hover:transform hover:-translate-y-1"
                     href={data?.event}
                     target={data?.event !== "" ? "_blank" : undefined}
-                    onClick={(e)=>{
+                    onClick={(e) => {
                       if (data?.event == "") {
                         e.preventDefault();
                       }
@@ -334,8 +343,8 @@ function About() {
                                 const selectedLanguage = e.target.value;
                                 setVirtualLink((p) => !p);
                               }}
-                              onClick={(e)=>{
-                                e.stopPropagation()
+                              onClick={(e) => {
+                                e.stopPropagation();
                               }}
                             >
                               <option value="" disabled selected>
