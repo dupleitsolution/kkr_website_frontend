@@ -196,7 +196,7 @@ function Home() {
                       placeholder="Enter a number"
                       name="name"
                       id="telNumber"
-                      className="  py- px-4 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-3 mb-1 md:my-5  border-gray-900 rounded-none text-lg font-semibold  border-solid h-[35px] md:h-[50px] text-center bg-gray-50"
+                      className="  py- px-4 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-4 mb-1 md:mb-2  border-gray-900 rounded-none text-lg font-semibold  border-solid h-[35px] text-center bg-gray-50"
                       value={number}
                       min={0}
                       max={99}
@@ -228,9 +228,9 @@ function Home() {
                         boxShadow: `rgba(0, 0, 0, 0.1) 1px 1px 7px 1px`,
                       }}
                     />
-                    <div className=" w-[90%] grid grid-cols-3 gap-0 md:gap-2   justify-center items-center  mb-1 md:mb-2 mt-1 md:mt-4">
+                    <div className=" w-[90%] grid grid-cols-3 gap-0 md:gap-2   justify-center items-center py-[10px] mb-1 md:mb-2 mt-1 md:mt-4">
                       <div
-                        className=" mx- mb-1 py-2  "
+                        className=" mx- mb-1  "
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "1"))
                         }
@@ -255,7 +255,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -273,7 +273,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className="flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -291,7 +291,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -309,7 +309,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -327,7 +327,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -345,7 +345,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -363,7 +363,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -381,7 +381,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -399,7 +399,7 @@ function Home() {
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -412,7 +412,7 @@ function Home() {
                       <div className="span4  inline-block mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -428,7 +428,7 @@ function Home() {
                       <div className=" mx- mb-1">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-1 md:m-2 "
                           onClick={onGoclick}
                         >
                           <div
@@ -446,9 +446,9 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className=" flex  mb-[40px] w-full h-[40px] justify-end">
+        <div className=" flex  mb-[28px] w-full h-[20px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
-            {share && (
+            {/* {share && (
               <div
                 className="flex items-center justify-between bg-white h-full mb-[5px] px-[10px] cursor-pointer w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "
                 style={{
@@ -478,15 +478,15 @@ function Home() {
                     window.location.href = "https://twitter.com/?lang=en";
                   }}
                 ></img>
-                {/* <img
+                 <img
                   className="bg-cover w-[20px]"
                   src={shar}
                   onClick={() => {
                     window.location.href = "https://www.facebook.com/";
                   }}
-                ></img> */}
+                ></img> 
               </div>
-            )}
+            )} */}
             <button
               style={{ borderRadius: "0.375rem" }}
               className="bg-[#842029]   w-[70%] md:w-[30%] text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px] hover:bg-gray-600  text-white"

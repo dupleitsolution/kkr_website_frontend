@@ -10,7 +10,7 @@ import Navbar from "./Pages/Navbar";
 
 function App() {
   return (
-      
+      <div className=" relative min-h-full">
        <Router>
              {/* <nav className="bg-[#c93f3f]">
             <Link to='/'>Hpme</Link>
@@ -26,8 +26,12 @@ function App() {
           <Route path="/about2" element={<About2 />} />
           <Route path="/about3" element={<About3 />} />
         </Routes>
+        <div className="absolute bottom-0">
         <Footer/>
+        </div>
+       
       </Router> 
+      </div>
   );
 }
 

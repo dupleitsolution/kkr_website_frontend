@@ -11,12 +11,12 @@ export default function Pagination({
   let Pages = new Array(totalPages).fill(1);
 
   return (
-    <div className="w-full mx-auto flex items-center justify-between border-t border-gray-200 px-4 py-3 sm:px-6">
+    <div className="w-full mx-auto flex items-center justify-between border-t border-gray-200 px-4 py-1 md:py-3 sm:px-6">
       <div className="flex flex-1 justify-center gap-2 md:hidden">
         <button
           disabled={currentPage == 1}
           onClick={() => setPage((pre) => pre - 1)}
-          className="relative  w-[120px] rounded-md border border-gray-300 bg-white px-4 py-2 
+          className="relative  w-[100px] rounded-md border border-gray-300 bg-white px-2 md:px-4 py- md:py-2 
           text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
           Previous
@@ -24,8 +24,8 @@ export default function Pagination({
         <button
           onClick={() => setPage((pre) => pre + 1)}
           disabled={currentPage == totalPages}
-          className=" w-[120px] 
-           rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          className=" w-[100px] 
+           rounded-md border border-gray-300 bg-white  px-2 md:px-4  py- md:py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
         >
           Next
         </button>

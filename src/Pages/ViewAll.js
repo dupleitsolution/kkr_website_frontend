@@ -476,13 +476,13 @@ function ViewAll() {
             className="h-[480px]  w-[150px] lg:w-[280px] object-contain"
           ></img>
         </div>
-        <div className=" w-full py-0 md:py-2 max-w-screen-md">
+        <div className=" w-full py-0 md:py-1 max-w-screen-md">
           <div className="  flex flex-col items-cente justify-cente w-full ">
-            <div className=" flex items-center flex-col  mx-auto w-full md:w-[100%]  mb-[20px] rounded-lg">
-              <div className="text-center py-1 ">
-                <span className="text-black text-[18px] md:text-[24px]">
+            <div className=" flex items-center flex-col  mx-auto w-full md:w-[100%]  mb-[10px] rounded-lg">
+              <div className="text-center py-0 text-black text-[18px] md:text-[24px]">
+                
                   List of Places
-                </span>
+                
               </div>
               <div
                 style={{
@@ -497,7 +497,7 @@ function ViewAll() {
                   <ul className="flex flex-col w-full items-start justify-start ">
                     {renderList?.map((place, index) => (
                       <li
-                        className="flex pl-[20px w-full  border-b-2 text-left text-[14px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
+                        className="flex pl-[20px w-full  border-b-2 text-left text-[12px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
                         key={index}
                         onClick={() => {
                           onListclick(place?.id);

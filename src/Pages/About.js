@@ -116,7 +116,7 @@ function About() {
   };
 
   return (
-    <>
+    < div className=" inline-block  min-h-64">
       {Loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="h-16 w-16 relative">
@@ -126,22 +126,23 @@ function About() {
       ) : data ? (
         <div
           id="05"
-          class=" flex flex-col  items-center justify-center w-full "
+          class=" flex flex-col min-h-full items-center justify-center w-full "
         >
           <div className="col-md-4 mb-[0px] w-full pb-[px] ">
             <div class="border-solid borde z-0 p-0">
               <div class="  flex flex-col justify-center items-center w-full overflow-hidd  relativ">
                 <div
                   id="05"
-                  class=" inse-0 flex items-center -10  text-[#581e00]  justify-center w-full h- p-4 px-4 rounded-lg text-3xl md:text-4xl text-center   font-bold font-poppins "
+                  class=" inse-0 flex items-center -10  text-[#581e00]  justify-center w-full h- p-2 px-4 rounded-lg text-2xl md:text-2xl text-center   font-bold font-poppins "
                 >
                   {data?.name}
                 </div>
-                <div className="relative">
+                <div className="bg-[#FBEBCC]">
+                <div className="relative bg-[#FBEBCC] m-2 ">
                   <img
                     alt=""
                     src={data?.banner !== "" ? data.banner : IMG1}
-                    className="bg-[#FBEBCC] border p- img-fluid img-thumbnail object-cover h-[350px] md:h-[350px] min-w-[305px] w-full bg-blend-darken"
+                    className="bg-[#FBEBCC] border  img-fluid img-thumbnail object-fit h-[150px] md:h-[250px] min-w-[305px] md:w-[600px] bg-blend-darken"
                   />
                   <div className="flex gap-8 justify-center items-center bg-black bg-opacity-50 inset-0 absolute">
                     <a
@@ -172,7 +173,7 @@ function About() {
                     </a>
                   </div>
                 </div>
-
+                </div>
                 <div
                   id=""
                   class="absolut inset- flex items-center bg-white   justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
@@ -196,7 +197,7 @@ function About() {
             </div>
 
             <section
-              className=" flex flex-col justify-center items-center blog md:mt-[00px] bg-re-50  overflow-hidden  relative "
+              className=" flex flex-col justify-center  items-center blog md:mt-[00px] bg-re-50  overflow-hidden  relative "
               id="blog"
             >
               {/* <h1
@@ -313,16 +314,16 @@ function About() {
                   </a>
                 </div>
               </div> */}
-              <section className=" pt- mb-10 mt-10 flex flex-col items-center justify-center   w-[90%]">
+              <section className=" pt- mb-2 md:mb-14 md:mt-10 mt-2 flex flex-col items-center justify-center   w-[90%]">
                 <h1 className="text-xl mb-2 md:text-[24px] text-center ">
                   Unveiling{" "}
                   <span className="text-[#581e00]">
                     the Ultimate Exploration
                   </span>
                 </h1>
-                {/* <p className="text-center heading-description py-5 text-[14px] md:text-lg font-semibold text-[#052e16]">
+                <p className="text-center heading-description py-0 md:py-4 text-[14px] md:text-lg font-semibold text-[#052e16]">
                   Your Path to Adventure Awaits!.
-                </p> */}
+                </p>
                 <div className="flex flex-wrap justify-center items-center  md:gap-6 ">
                   {iframe && (
                     <YoutubeModal
@@ -344,7 +345,7 @@ function About() {
                       return (
                         <div
                           key={index}
-                          className="border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
+                          className="border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[75px] w-[100px] md:h-[100px] md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
                           // onClick={(e) => {
                           //   e.stopPropagation();
                           //   setIframe((prevState) => !prevState);
@@ -358,17 +359,17 @@ function About() {
                               alt={option?.title}
                               className={`max-w-full w-25 ${
                                 option.image === quizimg
-                                  ? "h-[60px]"
-                                  : "h-[80px]"
-                              } bg-cover mb-4 cover justify-center items-center text-center`}
+                                  ? "h-[15px] md:h-[30px]"
+                                  : "h-[20px] md:h-[40px]"
+                              } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <span className="text-lg font-semibold ">
+                          <span className="text-[10px] md:text-sm font-semibold ">
                             {option.title}
                           </span>
                           {option?.link2?.length > 2 && (
                             <select
-                              className="flex items-center text-[12px] h-[10%] placeholder:language bg-[#DDDDDD] hover:bg-white"
+                              className="flex items-center text-[10px] h-[10%] placeholder:language bg-[#DDDDDD] hover:bg-white"
                               onChange={(e) => {
                                 e.stopPropagation();
                                 const selectedLanguage = e.target.value;
@@ -402,7 +403,7 @@ function About() {
 
                           <p className="text-sm text-gray-500">
                             <a
-                              className="flex items-center text-sm text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm  text-blue-600 hover:underline"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIframe((p) => !p);
@@ -425,7 +426,7 @@ function About() {
                       return (
                         <a
                           key={index}
-                          className="border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
+                          className="border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[75px] w-[100px] md:h-[100px] md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
                           // onClick={() => {
                           //   setIPframe((prevState) => !prevState);
                           //   setUrl(option.link);
@@ -444,17 +445,17 @@ function About() {
                               alt={option.title}
                               className={`max-w-full w-25 ${
                                 option.image === quizimg
-                                  ? "h-[90px]"
-                                  : "h-[80px]"
-                              } bg-cover mb-4 cover justify-center items-center text-center`}
+                                  ? "h-[22px] md:h-[45px]"
+                                  : "h-[20px] md:h-[40px]"
+                              } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <h3 className="text-lg font-semibold mb-4">
+                          <h3 className="text-[10px] md:text-sm font-semibold mb-">
                             {option.title}
                           </h3>
                           <p className="text-sm text-gray-500">
                             <a
-                              className="flex items-center text-sm text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIPframe((p) => !p);
@@ -472,7 +473,7 @@ function About() {
                       return (
                         <a
                           key={index}
-                          className=" border border-sky-blue flex flex-col items-center cursor-pointer shadow-lg m-2 h-[200px] w-[250px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-4"
+                          className=" border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[75px] w-[100px] md:h-[100px] md:w-[150px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
                           href={option.link1}
                           target="_blank" // Open link in a new tab
                           rel="noopener noreferrer" // Add rel attribute for security reasons
@@ -483,37 +484,26 @@ function About() {
                               alt={option?.title}
                               className={`max-w-full w-25 ${
                                 option?.image === quizimg
-                                  ? "h-[80px]"
-                                  : "h-[80px]"
-                              } bg-cover mb-4 cover justify-center items-center text-center`}
+                                  ? "h-[20px] md:h-[40px]"
+                                  : "h-[20px] md:h-[40px]"
+                              } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <h3 className="text-lg font-semibold mb-4">
+                          <h3 className="text-[10px] md:text-sm font-semibold mb-">
                             {option?.title}
                           </h3>
                           <p className="text-sm text-gray-500">
                             <a
-                              href={option?.link1}
-                              className="flex items-center text-sm  text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline"
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setIPframe((p) => !p);
+                                setUrl(option.link1);
+                              }}
                               target="_blank" // Open link in a new tab
                               rel="noopener noreferrer" // Add rel attribute for security reasons
                             >
                               See our guidelines{" "}
-                              <svg
-                                className="w-3 h-3 ms-2.5 rtl:rotate-[270deg]"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 18 18"
-                              >
-                                <path
-                                  stroke="currentColor"
-                                  strokeLinecap="round"
-                                  strokeLinejoin="round"
-                                  strokeWidth="2"
-                                  d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"
-                                />
-                              </svg>
                             </a>
                           </p>
                         </a>
@@ -540,7 +530,7 @@ function About() {
           <p>No tourist Place found!</p>
         </div>
       )}
-    </>
+    </div>
   );
 }
 
