@@ -446,13 +446,13 @@ function ViewAll() {
           <div class="backdrop-blur-3xl flex flex-col justify-center items-center w-full overflow-hidden  relative">
             <img
               alt=""
-              src={getSrcByScreenSize()}
-              class="img-fluid img-thumbnail bg-cover h-[350px] md:h-[250px] min-w-[305px] w-[100%]  bg-blend-darken bg-black bg-opacity-40"
+              src={about1}
+              class="img-fluid img-thumbnail bg-cover h-[90px] md:h-[250px] min-w-[305px] w-[100%] obsolute  bg-blend-darken bg-black bg-opacity-40"
             />
 
             <div
               id="05"
-              class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-3xl md:text-4xl text-center  text-white  font-bold font-poppins "
+              class="absolute inset-0 flex items-center bg-black bg-opacity-40 justify-center w-full h- p-1 px-4 rounded-lg text-2xl md:text-4xl text-center  text-white  font-bold font-poppins "
             >
               All You Need To Know
             </div>
@@ -476,11 +476,11 @@ function ViewAll() {
             className="h-[480px]  w-[150px] lg:w-[280px] object-contain"
           ></img>
         </div>
-        <div className=" w-full py-4 max-w-screen-md">
+        <div className=" w-full py-0 md:py-2 max-w-screen-md">
           <div className="  flex flex-col items-cente justify-cente w-full ">
             <div className=" flex items-center flex-col  mx-auto w-full md:w-[100%]  mb-[20px] rounded-lg">
               <div className="text-center py-1 ">
-                <span className="text-black text-xl md:text-[24px]">
+                <span className="text-black text-[18px] md:text-[24px]">
                   List of Places
                 </span>
               </div>
@@ -489,21 +489,21 @@ function ViewAll() {
                   borderRadius: "10px",
                   boxShadow: `rgba(0, 0, 0, 0.4) 0px 5px 15px`,
                 }}
-                className="flex items-center justify-center w-[90%] bg-white overflow-hidden mt-2"
+                className="flex items-center justify-center w-[70%] md:w-[90%] bg-white overflow-hidden mt-2"
               >
-                <div className="flex flex-col items-center justify-center w-[100%] ">
+                <div className="flex flex-col items-center justify-center w-[100%] md:w-[100%] ">
                   {/* <h2 className="text-center">List of Places</h2> */}
 
                   <ul className="flex flex-col w-full items-start justify-start ">
                     {renderList?.map((place, index) => (
                       <li
-                        className="flex pl-[20px w-full  border-b-2 text-left text-[18px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
+                        className="flex pl-[20px w-full  border-b-2 text-left text-[14px] md:text-[22px] bg-[#FBEBCC]  hover:bg-[#D1C2AA]  "
                         key={index}
                         onClick={() => {
                           onListclick(place?.id);
                         }}
                       >
-                        <span className=" bg-[#581e00] py-2 w-[15%] text-center text-slate-300">
+                        <span className=" bg-[#581e00] py-0 md:py-2 w-[15%] text-center text-slate-300">
                           {startingIndex + index + 1}{" "}
                         </span>
 
@@ -511,7 +511,7 @@ function ViewAll() {
                           href={place.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="ml-[10px] py-2 text-[18px] md:text-[22px]  cursor-pointer "
+                          className="ml-[10px] py-0 md:py-2 text-[14px] md:text-[22px]  cursor-pointer "
                         >
                           {place.name}
                         </a>
