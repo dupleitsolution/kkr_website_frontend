@@ -12,12 +12,12 @@ function App() {
   return (
       
        <Router>
-            {/* <nav className="bg-[#c93f3f]">
+             {/* <nav className="bg-[#c93f3f]">
             <Link to='/'>Hpme</Link>
             <Link to='/about'>About</Link>
             <Link to='/about2'>About2</Link>
             <Link to='/about3'>About3</Link>
-           </nav>  */}
+           </nav>   */}
            <Navbar/>
         <Routes>
           <Route path="/" element={<Home />} />
