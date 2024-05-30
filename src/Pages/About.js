@@ -116,7 +116,7 @@ function About() {
   };
 
   return (
-    < div className=" inline-block  min-h-64">
+    < div className=" ">
       {Loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="h-16 w-16 relative">
@@ -197,7 +197,7 @@ function About() {
             </div>
 
             <section
-              className=" flex flex-col justify-center  items-center blog md:mt-[00px] bg-re-50  overflow-hidden  relative "
+              className=" flex flex-col justify-center items-center blog md:mt-[00px] bg-re-50   overflow-hidden   "
               id="blog"
             >
               {/* <h1
@@ -314,7 +314,7 @@ function About() {
                   </a>
                 </div>
               </div> */}
-              <section className=" pt- mb-2 md:mb-14 md:mt-10 mt-2 flex flex-col items-center justify-center   w-[90%]">
+              <section className=" pt- mb-2 md:mb-14 md:mt-10 mt-2 flex flex-col items-center justify-center    w-[90%]">
                 <h1 className="text-xl mb-2 md:text-[24px] text-center ">
                   Unveiling{" "}
                   <span className="text-[#581e00]">
