@@ -91,7 +91,7 @@ function Home() {
 
   return (
     <div className="  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
-      <div className="w-full ">
+      <div className="w-full">
         <Carousel
           arrows={false}
           showDots={true}
@@ -128,8 +128,7 @@ function Home() {
       </div>
 
       <div
-        className="flex flex-col  w-full justify-center items-center relative overflow-hidden 
-       "
+        className="flex overflow-hidden relative flex-col justify-center items-center w-full"
       >
         <div className="absolute  hidden md:block  left-[-10px] bottom-0">
           <img
@@ -143,10 +142,10 @@ function Home() {
             className="h-[480px]  w-[150px] lg:w-[280px] object-contain"
           ></img>
         </div>
-        <div className="container w-full py-4 max-w-screen-md">
-          <div className="  flex flex-col items-center justify-center w-full ">
+        <div className="container py-4 w-full max-w-screen-md">
+          <div className="flex flex-col justify-center items-center w-full">
             <div className=" mx-auto w-full md:w-[60%]  mb-[20px] rounded-lg">
-              <div className="text-center  flex flex-col justify-center items-center py-1 ">
+              <div className="flex flex-col justify-center items-center py-1 text-center">
                 <span className="text-black text-xl md:text-[24px] ">
                   Kurukshetra Tour Guide
                 </span>
@@ -174,10 +173,10 @@ function Home() {
                   borderRadius: "10px",
                   boxShadow: `rgba(0, 0, 0, 0.4) 0px 5px 15px`,
                 }}
-                className="row  bg-white overflow-hidden mt-2"
+                className="overflow-hidden mt-2 bg-white row"
               >
-                {/* <div style={{ borderRadius: '0.275rem' }} className="rounded-t-lg bg-slate-100 ">
-                <div className="viewall text-center pb-4">
+                {/* <div style={{ borderRadius: '0.275rem' }} className="rounded-t-lg bg-slate-100">
+                <div className="pb-4 text-center viewall">
                   <span>
                     <a
                       className="text-black"
@@ -189,8 +188,8 @@ function Home() {
                 </div>
               </div> */}
 
-                <div className="text-center ">
-                  <div className="col-md-12 w-full flex items-center bg-white shadow-lg  justify-center flex-col">
+                <div className="text-center">
+                  <div className="flex flex-col justify-center items-center w-full bg-white shadow-lg col-md-12">
                     <input
                       type="tel"
                       placeholder="Enter a number"
@@ -230,14 +229,14 @@ function Home() {
                     />
                     <div className=" w-[90%] grid grid-cols-3 gap-0 md:gap-2   justify-center items-center py-[10px] mb-1 md:mb-2 mt-1 md:mt-4">
                       <div
-                        className=" mx- mb-1  "
+                        className="mb-1 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "1"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%]  h-[50px]  transition duration-200 ease-linear shadow-md bord bor rounded-sm p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%]  h-[50px]  transition duration-200 ease-linear shadow-md bord bor rounded-sm p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -248,14 +247,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1   "
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "2"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -266,14 +265,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1  "
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "3"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className="flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -284,14 +283,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "4"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -302,14 +301,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "5"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -320,14 +319,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "6"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -338,14 +337,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "7"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -356,14 +355,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "8"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -374,14 +373,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "9"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -392,14 +391,14 @@ function Home() {
                         </div>
                       </div>
                       <div
-                        className="span4  inline-block mx- mb-1"
+                        className="inline-block mb-1 span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "0"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-1 md:m-2 "
+                          className="flex justify-center items-center  w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg p-2 md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -409,10 +408,10 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                      <div className="span4  inline-block mx- mb-1">
+                      <div className="inline-block mb-1 span4 mx-">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  m-2 md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
@@ -425,10 +424,10 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                      <div className=" mx- mb-1">
+                      <div className="mb-1 mx-">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-1 md:m-2 "
+                          className=" flex justify-center items-center w-[80%] h-[50px] transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full p-2 md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  m-2 md:m-2 "
                           onClick={onGoclick}
                         >
                           <div
@@ -446,7 +445,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className=" flex  mb-[10px] md:mb-[28px] w-full h-[40px] justify-end">
+        <div className=" flex md:mt-[0px] mt-[40px]  mb-[10px] md:mb-[28px] w-full h-[40px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {/* {share && (
               <div

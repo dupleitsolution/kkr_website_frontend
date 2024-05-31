@@ -11,8 +11,8 @@ export default function Pagination({
   let Pages = new Array(totalPages).fill(1);
 
   return (
-    <div className="w-full mx-auto flex items-center justify-between border-t border-gray-200 px-4 py-1 md:py-3 sm:px-6">
-      <div className="flex flex-1 justify-center gap-2 md:hidden">
+    <div className="flex justify-between items-center px-4 py-1 mx-auto w-full border-t border-gray-200 md:py-3 sm:px-6">
+      <div className="flex flex-1 gap-2 justify-center md:hidden">
         <button
           disabled={currentPage == 1}
           onClick={() => setPage((pre) => pre - 1)}
@@ -31,20 +31,20 @@ export default function Pagination({
         </button>
       </div>
 
-      <div className="  mx-auto flex justify-center items-center  hidden md:block  ">
+      <div className="flex hidden justify-center items-center mx-auto md:block">
         <div>
           <nav
-            className="isolate inline-flex -space-x-px rounded-md shadow-sm"
+            className="inline-flex isolate -space-x-px rounded-md shadow-sm"
             aria-label="Pagination"
           >
             <a
               href="#"
-              className="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="inline-flex relative items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only" >Previous</span>
 
               <button onClick={onLeftclick} disabled={currentPage == 1}>
-                <ChevronLeftIcon className="h-5 w-5" aria-hidden="true" />
+                <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
               </button>
             </a>
 
@@ -109,12 +109,12 @@ export default function Pagination({
 
             <a
               href="#"
-              className="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
+              className="inline-flex relative items-center px-2 py-2 text-gray-400 rounded-r-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
               <span className="sr-only">Next</span>
 
               <button onClick={onRightclick} disabled={currentPage == totalPages}>
-                <ChevronRightIcon className="h-5 w-5" aria-hidden="true" />
+                <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
               </button>
             </a>
           </nav>
