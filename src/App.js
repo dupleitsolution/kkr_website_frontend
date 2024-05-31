@@ -18,17 +18,19 @@ function App() {
             <Link to='/about2'>About2</Link>
             <Link to='/about3'>About3</Link>
            </nav>   */}
-        <Navbar />
+        
         <div className="min-h-screen">
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/view" element={<ViewAll />} />
-          <Route path="/about2" element={<About2 />} />
-          <Route path="/about3" element={<About3 />} />
+          {/* <Route path="/about2" element={<About2 />} />
+          <Route path="/about3" element={<About3 />} /> */}
         </Routes>
         </div>
         <Footer />
+        
       </Router>
     </div>
   );

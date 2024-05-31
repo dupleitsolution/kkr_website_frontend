@@ -446,7 +446,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className=" flex  mb-[28px] w-full h-[20px] justify-end">
+        <div className=" flex  mb-[10px] md:mb-[28px] w-full h-[40px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {/* {share && (
               <div
@@ -489,7 +489,7 @@ function Home() {
             )} */}
             <button
               style={{ borderRadius: "0.375rem" }}
-              className="bg-[#842029]   w-[70%] md:w-[30%] text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px] hover:bg-gray-600  text-white"
+              className="bg-[#842029]   w-[70%] md:w-[30%]  text-[12px] md:text-[14px] py-0 md:mr-[0px] mr-[30px] hover:bg-gray-600  text-white"
               onClick={() => setShare((p) => !p)}
             >
               Share Now
