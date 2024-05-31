@@ -314,7 +314,7 @@ function About() {
                   </a>
                 </div>
               </div> */}
-              <section className=" pt- mb-2 md:mb-14 md:mt-10 mt-2 flex flex-col items-center justify-center    w-[90%]">
+              <section className=" pt- mb-2 md:mb-14 md:mt-20 mt-2 flex flex-col items-center justify-center    w-[90%]">
                 <h1 className="text-xl mb-2 md:text-[24px] text-center ">
                   Unveiling{" "}
                   <span className="text-[#581e00]">

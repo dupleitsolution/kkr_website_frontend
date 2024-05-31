@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="  w-full flex flex-col md:flex-row bg-[#842029] justify-between items-center py-2 px-4 bg-neutral text-neutral-content mt-auto">
+    <footer className="  w-full flex flex-col md:flex-row bg-[#842029] justify-between items-center py-2 px- bg-neutral text-neutral-content mt-auto">
       <aside className=" flex w-full items-center justify-center">
         {/* <svg
           width="36"

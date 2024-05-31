@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Navbar = () => {
   return (
     <nav className="relative overflow-hidden z-50 border-gray-200 bg-[#842029] dark:bg-gray-800 dark:border-gray-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-4">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img
             src="https://cdn-icons-png.flaticon.com/128/2465/2465342.png"
