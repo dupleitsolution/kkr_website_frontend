@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="   w-full ">
+    <div className="w-full">
       <Router>
         {/* <nav className="bg-[#c93f3f]">
             <Link to='/'>Hpme</Link>
@@ -19,7 +19,7 @@ function App() {
             <Link to='/about3'>About3</Link>
            </nav>   */}
         
-        <div className="min-h-screen ">
+        <div className="">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
           <Route path="/about3" element={<About3 />} /> */}
         </Routes>
         </div>
-        <Footer />
+        {/* <Footer /> */}
         
       </Router>
     </div>
