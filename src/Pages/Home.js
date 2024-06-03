@@ -448,43 +448,40 @@ function Home() {
         <div className=" flex md:mt-[0px]   mb-[10px] md:mb-[28px] w-full h-[40px] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
              {share && (
-              <div
-                className="flex items-center justify-center bg-white h-full my-[5px] py-[10px] px-[10px] cursor-pointer w-[70%] md:w-[30%]  md:mr-[0px] mr-[30px] "
-                style={{
-                  borderRadius: "0.375rem",
-                  boxShadow: `rgba(0, 0, 0, 0.4) 1px 1px 7px 1px`,
-                }}
-              >
-                <img
-                  className="bg-cover w-[18px]"
-                  src={fb}
-                  onClick={() => {
-                    window.location.href = "https://www.facebook.com/";
-                  }}
-                ></img>
-                <img
-                  className="bg-cover w-[18px]"
-                  src={inst}
-                  onClick={() => {
-                    window.location.href =
-                      "https://www.instagram.com/sem/campaign/signup/?campaign_id=13530338610&extra_1=s%7Cc%7C547419127631%7Ce%7Cinstagram%20%27%7C&placement&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D9303130%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=Cj0KCQjwxeyxBhC7ARIsAC7dS3_lpZBxjoLci5ermXU1r4K5E2SZwthlUhrUecKiKD69YN21L3o0Rt4aAtUBEALw_wcB";
-                  }}
-                ></img>
-                <img
-                  className="bg-cover w-[18px]"
-                  src={twi}
-                  onClick={() => {
-                    window.location.href = "https://twitter.com/?lang=en";
-                  }}
-                ></img>
-                 <img
-                  className="bg-cover w-[18px]"
-                  src={shar}
-                  onClick={() => {
-                    window.location.href = "https://www.facebook.com/";
-                  }}
-                ></img> 
-              </div>
+             <div
+             className="flex items-center justify-center md:justify-between bg-white h-full my-[5px] py-[10px] px-[10px] cursor-pointer w-[70%] md:w-[30%] md:mr-[0px] mr-[30px] rounded-md shadow-md  transition duration-200"
+           >
+             <img
+               className="bg-cover md:w-[24px] w-[18px] hover:scale-110  hover:bg-slate-300 transition duration-200"
+               src={fb}
+               onClick={() => {
+                 window.location.href = "https://www.facebook.com/";
+               }}
+             />
+             <img
+               className="bg-cover md:w-[24px] w-[18px] hover:scale-110 hover:bg-slate-300 transition duration-200"
+               src={inst}
+               onClick={() => {
+                 window.location.href =
+                   "https://www.instagram.com/sem/campaign/signup/?campaign_id=13530338610&extra_1=s%7Cc%7C547419127631%7Ce%7Cinstagram%20%27%7C&placement&creative=547419127631&keyword=instagram%20%27&partner_id=googlesem&extra_2=campaignid%3D13530338610%26adgroupid%3D126262414014%26matchtype%3De%26network%3Dg%26source%3Dnotmobile%26search_or_content%3Ds%26device%3Dc%26devicemodel%3D%26adposition%3D%26target%3D%26targetid%3Dkwd-1321618851291%26loc_physical_ms%3D9303130%26loc_interest_ms%3D%26feeditemid%3D%26param1%3D%26param2%3D&gad_source=1&gclid=Cj0KCQjwxeyxBhC7ARIsAC7dS3_lpZBxjoLci5ermXU1r4K5E2SZwthlUhrUecKiKD69YN21L3o0Rt4aAtUBEALw_wcB";
+               }}
+             />
+             <img
+               className="bg-cover md:w-[24px] w-[18px] hover:scale-110 hover:bg-slate-300 transition duration-200"
+               src={twi}
+               onClick={() => {
+                 window.location.href = "https://twitter.com/?lang=en";
+               }}
+             />
+             <img
+               className="bg-cover md:w-[24px] w-[18px] hover:scale-110 hover:bg-slate-300 transition duration-200"
+               src={shar}
+               onClick={() => {
+                 window.location.href = "https://www.facebook.com/";
+               }}
+             />
+           </div>
+           
             )}
              
             <button
