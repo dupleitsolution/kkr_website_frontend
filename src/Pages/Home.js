@@ -448,14 +448,14 @@ function Home() {
             {share && (
               <div className="flex items-center justify-center md:justify-between bg-white h-full my-[5px] py-[10px] px-[10px] cursor-pointer w-[70%] md:w-[30%] md:mr-[0px] mr-[30px] rounded-md shadow-md  transition duration-200">
                 <img
-                  className="bg-cover md:w-[30px] w-[20px] rounded-xl md:p-1 hover:scale-110  hover:bg-slate-300 transition duration-200"
+                  className="bg-cover md:w-[30px] w-[20px] rounded-xl p-0 md:p-1 hover:scale-110  hover:bg-slate-300 transition duration-200"
                   src={fb}
                   onClick={() => {
                     window.location.href = "https://www.facebook.com/";
                   }}
                 />
                 <img
-                  className="bg-covermd md:w-[30px] w-[20px] rounded-xl  md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
+                  className="bg-covermd md:w-[30px] w-[20px] rounded-xl p-0  md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
                   src={inst}
                   onClick={() => {
                     window.location.href =
@@ -463,14 +463,14 @@ function Home() {
                   }}
                 />
                 <img
-                  className="bg-cover md:w-[30px] w-[20px] rounded-xl  md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
+                  className="bg-cover md:w-[30px] w-[20px] rounded-xl p-0  md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
                   src={twi}
                   onClick={() => {
                     window.location.href = "https://twitter.com/?lang=en";
                   }}
                 />
                 <img
-                  className="bg-cover md:w-[30px] w-[20px] rounded-xl  md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
+                  className="bg-cover md:w-[30px] w-[20px] rounded-xl p-0 md:p-1 hover:scale-110 hover:bg-slate-300 transition duration-200"
                   src={shar}
                   onClick={() => {
                     window.location.href = "https://www.facebook.com/";
