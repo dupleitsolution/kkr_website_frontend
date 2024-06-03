@@ -39,8 +39,9 @@ function About() {
 
   const [data, setData] = useState("");
   const [options, setOptions] = useState([]);
-  const [virtualLink, setVirtualLink] = useState(true);
+  const [virtualLink, setVirtualLink] = useState("hindi");
   const [apiCall, setApiCall] = useState(true);
+  console.log('virtualLink', virtualLink)
 
   function combineLinksByTitle(dataa) {
     const result = {};
@@ -412,7 +413,7 @@ function About() {
                                 e.stopPropagation();
                                 setIframe((p) => !p);
                                 setUrl(
-                                  virtualLink==="hindi" ? option?.link1 : option?.link2
+                                  virtualLink==="english" ? option?.link2 : option?.link1
                                 );
                               }}
                               target="_blank" // Open link in a new tab
