@@ -116,7 +116,7 @@ function About() {
   };
 
   return (
-    < div className="">
+    < div className="overflow-hidden">
       {Loading ? (
         <div className="flex justify-center items-center h-screen">
           <div className="relative w-16 h-16">
@@ -133,16 +133,16 @@ function About() {
               <div class="flex flex-col justify-center items-center w-full overflow-hidd relativ">
                 <div
                   id="05"
-                  class=" inse-0 flex items-center -10  text-[#581e00]  justify-center w-full h- p-2 px-4 rounded-lg text-2xl md:text-2xl text-center   font-bold font-poppins "
+                  class=" inse-0 flex items-center -10  text-[#581e00]  justify-center w-full h- p-1 md:p-2 px-4 rounded-lg  text-xl md:text-2xl text-center   font-bold font-poppins "
                 >
                   {data?.name}
                 </div>
-                <div className="bg-[#FBEBCC]">
+                <div className="bg-[#FBEBCC] ">
                 <div className="relative bg-[#FBEBCC] m-2 ">
                   <img
                     alt=""
                     src={data?.banner !== "" ? data.banner : IMG1}
-                    className="bg-[#FBEBCC] border  img-fluid img-thumbnail object-fit h-[150px] md:h-[250px] min-w-[305px] md:w-[600px] bg-blend-darken"
+                    className="bg-[#FBEBCC] border  img-fluid img-thumbnail object-fit h-[110px] md:h-[200px] min-w-[305px] md:w-[600px] bg-blend-darken"
                   />
                   <div className="flex absolute inset-0 gap-8 justify-center items-center bg-black bg-opacity-50">
                     <a
@@ -151,7 +151,7 @@ function About() {
                       rel={
                         data?.about !== "" ? "noopener noreferrer" : undefined
                       }
-                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 text-lg font-semibold hover:text-[#581e00]"
+                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 md:text-lg font-semibold hover:text-[#581e00]"
                     >
                       About
                     </a>
@@ -159,7 +159,7 @@ function About() {
                     <a
                       href={data?.map}
                       target={data?.map !== "" ? "_blank" : undefined}
-                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 text-lg font-semibold hover:text-[#581e00]"
+                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 md:text-lg font-semibold hover:text-[#581e00]"
                     >
                       Map
                     </a>
@@ -167,7 +167,7 @@ function About() {
                     <a
                       href={data?.event}
                       target={data?.event !== "" ? "_blank" : undefined}
-                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 text-lg font-semibold hover:text-[#581e00]"
+                      className="heading-description bg-none hover:bg-[#FBEBCC] text-[#FBEBCC] rounded-xl py-2 px-4 md:text-lg font-semibold hover:text-[#581e00]"
                     >
                       Event
                     </a>
@@ -314,14 +314,14 @@ function About() {
                   </a>
                 </div>
               </div> */}
-              <section className=" pt- mb-2 md:mb-14 md:mt-20 mt-2 flex flex-col items-center justify-center    w-[90%]">
-                <h1 className="text-xl mb-2 md:text-[24px] text-center ">
+              <section className=" pt- mb-2 md:mb-14 md:mt-8 mt-2 flex flex-col items-center justify-center    w-[90%]">
+                <h1 className="text-[16px]  mb-2 md:text-[24px] text-center ">
                   Unveiling{" "}
-                  <span className="text-[#581e00]">
+                  <span className=" text-[16px] md:text-[24px] text-[#581e00]">
                     the Ultimate Exploration
                   </span>
                 </h1>
-                <p className="text-center heading-description py-0 md:py-4 text-[14px] md:text-lg font-semibold text-[#052e16]">
+                <p className="text-center text-[12px] heading-description py-0 md:py-4 text-[14px] md:text-lg font-semibold text-[#052e16]">
                   Your Path to Adventure Awaits!.
                 </p>
                 <div className="flex flex-wrap justify-center items-center md:gap-6">
@@ -337,7 +337,8 @@ function About() {
                       toggle={() => setIPframe((p) => !p)}
                     />
                   )}
-                  {options?.map((option, index) => {
+          <div className="flex flex-wrap gap-2 justify-center mt-1 w-full">
+          {options?.map((option, index) => {
                     if (option?.link1 === "" || option?.link1 == "#") {
                       return null; // Skip rendering if link is empty
                     }
@@ -345,7 +346,7 @@ function About() {
                       return (
                         <div
                           key={index}
-                          className="border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[85px] w-[100px] md:h-[100px] md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
+                          className="border border-sky-blue rounded-xl justify-between flex flex-col items-center cursor-pointer shadow-lg  w-[110px]  md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg py-2 px-3"
                           // onClick={(e) => {
                           //   e.stopPropagation();
                           //   setIframe((prevState) => !prevState);
@@ -353,6 +354,7 @@ function About() {
                           //   setUrl(virtualLink?option.link1:option.link2);
                           // }}
                         >
+                          <div>
                           <div className="flex justify-center sub-img d-flex">
                             <img
                               src={getImageSource(option?.title)}
@@ -364,16 +366,16 @@ function About() {
                               } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <span className="text-[10px] md:text-sm font-semibold ">
+                          <div className="text-[12px] leading-[12px] md:text-lg text-center font-semibold ">
                             {option.title}
-                          </span>
+                          </div>
                           {option?.link2?.length > 2 && (
                             <select
                               className="flex items-center text-[10px] h-[25%] placeholder:language bg-[#DDDDDD] hover:bg-white"
                               onChange={(e) => {
                                 e.stopPropagation();
                                 const selectedLanguage = e.target.value;
-                                setVirtualLink((p) => !p);
+                                setVirtualLink(selectedLanguage);
                               }}
                               onClick={(e) => {
                                 e.stopPropagation();
@@ -400,15 +402,17 @@ function About() {
                               </option>
                             </select>
                           )}
+                            </div>
 
-                          <p className="text-sm text-gray-500">
+                        <div>
+                        <p className="text-sm text-center text-gray-500">
                             <a
-                              className="flex items-center text-[10px] md:text-sm  text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm  text-blue-600 hover:underline  leading-[11px] mt-1"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIframe((p) => !p);
                                 setUrl(
-                                  virtualLink ? option?.link1 : option?.link2
+                                  virtualLink==="hindi" ? option?.link1 : option?.link2
                                 );
                               }}
                               target="_blank" // Open link in a new tab
@@ -417,6 +421,7 @@ function About() {
                               See our guidelines{" "}
                             </a>
                           </p>
+                          </div>
                         </div>
                       );
                     } else if (option.title == "Panoramic View") {
@@ -426,7 +431,7 @@ function About() {
                       return (
                         <a
                           key={index}
-                          className="border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[85px] w-[100px] md:h-[100px] md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
+                          className="border border-sky-blue rounded-xl flex justify-between flex-col items-center cursor-pointer shadow-lg w-[110px] md:w-[150px] transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg py-2 px-3"
                           // onClick={() => {
                           //   setIPframe((prevState) => !prevState);
                           //   setUrl(option.link);
@@ -439,7 +444,8 @@ function About() {
                           target="_blank" // Open link in a new tab
                           rel="noopener noreferrer" // Add rel attribute for security reasons
                         >
-                          <div className="flex justify-center sub-img d-flex">
+                         <div>
+                         <div className="flex justify-center sub-img d-flex">
                             <img
                               src={getImageSource(option.title)}
                               alt={option.title}
@@ -450,12 +456,14 @@ function About() {
                               } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <h3 className="text-[10px] md:text-sm font-semibold mb-">
+                          <div className=" text-[12px] leading-[12px] md:text-lg  text-center font-semibold mb-">
                             {option.title}
-                          </h3>
-                          <p className="text-sm text-gray-500">
+                          </div>
+                         </div>
+                 <div>
+                 <p className="text-sm text-center text-gray-500">
                             <a
-                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline  leading-[11px] mt-1"
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIPframe((p) => !p);
@@ -467,18 +475,20 @@ function About() {
                               See our guidelines{" "}
                             </a>
                           </p>
+                 </div>
                         </a>
                       );
                     } else {
                       return (
                         <a
                           key={index}
-                          className=" border border-sky-blue rounded-xl flex flex-col items-center cursor-pointer shadow-lg m-2 h-[85px] w-[100px] md:h-[100px] md:w-[150px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg p-2"
+                          className=" border border-sky-blue rounded-xl  flex flex-col items-center  justify-between cursor-pointer shadow-lg   w-[110px] md:w-[150px]  transition duration-400 ease-in-out hover:bg-[#DDDDDD] hover:transform hover:-translate-y-1 border-solid rounded-lg py-2 px-3"
                           href={option.link1}
                           target="_blank" // Open link in a new tab
                           rel="noopener noreferrer" // Add rel attribute for security reasons
                         >
-                          <div className="flex justify-center sub-img d-flex">
+                        <div>
+                        <div className="flex justify-center sub-img d-flex">
                             <img
                               src={getImageSource(option?.title)}
                               alt={option?.title}
@@ -489,12 +499,14 @@ function About() {
                               } bg-cover mb-2 cover justify-center items-center text-center`}
                             />
                           </div>
-                          <h3 className="text-[10px] md:text-sm font-semibold mb-">
+                          <div className="text-[12px] leading-[12px] text-center md:text-lg  font-semibold mb-">
                             {option?.title}
-                          </h3>
-                          <p className="text-sm text-gray-500">
+                          </div>
+                        </div>
+                         <div>
+                         <p className="text-sm text-center text-gray-500">
                             <a
-                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline"
+                              className="flex items-center text-[10px] md:text-sm text-blue-600 hover:underline leading-[11px] mt-1 "
                               onClick={(e) => {
                                 e.stopPropagation();
                                 setIPframe((p) => !p);
@@ -506,10 +518,12 @@ function About() {
                               See our guidelines{" "}
                             </a>
                           </p>
+                         </div>
                         </a>
                       );
                     }
                   })}
+          </div>
                 </div>
               </section>
 

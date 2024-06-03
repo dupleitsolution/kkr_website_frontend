@@ -419,6 +419,7 @@ function ViewAll() {
 
   const handleLeftpage = () => {
     setPage((p) =>{ 
+      
       localStorage.setItem("page", JSON.stringify(p-1));
       return p - 1});
   };
@@ -488,7 +489,7 @@ function ViewAll() {
                   borderRadius: "10px",
                   boxShadow: `rgba(0, 0, 0, 0.4) 0px 5px 15px`,
                 }}
-                className="flex items-center justify-center w-[80%] md:w-[90%] bg-white overflow-hidden mt-2"
+                className="flex items-center justify-center w-[87%] md:w-[90%] bg-white overflow-hidden mt-2"
               >
                 <div className="flex flex-col items-center justify-center w-[100%] md:w-[100%] ">
                   {/* <h2 className="text-center">List of Places</h2> */}

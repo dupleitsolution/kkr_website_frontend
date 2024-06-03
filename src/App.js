@@ -29,7 +29,9 @@ function App() {
           <Route path="/about3" element={<About3 />} /> */}
         </Routes>
         </div>
-        {/* <Footer /> */}
+   {/* <div className="fixed bottom-0 w-full">
+   <Footer />
+   </div> */}
         
       </Router>
     </div>

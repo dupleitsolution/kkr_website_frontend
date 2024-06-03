@@ -15,17 +15,23 @@ export default function Pagination({
       <div className="flex flex-1 gap-2 justify-center md:hidden">
         <button
           disabled={currentPage == 1}
-          onClick={() => setPage((pre) => pre - 1)}
-          className="relative  w-[100px] rounded-md border border-gray-300 bg-white px-2 md:px-4 py- md:py-2 
-          text-sm font-medium text-gray-700 hover:bg-gray-50"
+          onClick={onLeftclick}
+          className={`relative w-[100px] rounded-md border ${
+            currentPage == 1
+              ? "border-gray-300 bg-gray-300 text-gray-500"
+              : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+          } px-2 md:px-4 py-1 md:py-2 text-sm font-medium`}
         >
           Previous
         </button>
         <button
-          onClick={() => setPage((pre) => pre + 1)}
+          onClick={onRightclick}
           disabled={currentPage == totalPages}
-          className=" w-[100px] 
-           rounded-md border border-gray-300 bg-white  px-2 md:px-4  py- md:py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+          className={`w-[100px] rounded-md border ${
+            currentPage === totalPages
+              ? "border-gray-300 bg-gray-300 text-gray-500"
+              : "border-gray-300 bg-white text-gray-700 hover:bg-gray-50"
+          } px-2 md:px-4 py-1 md:py-2 text-sm font-medium`}
         >
           Next
         </button>
@@ -41,7 +47,7 @@ export default function Pagination({
               href="#"
               className="inline-flex relative items-center px-2 py-2 text-gray-400 rounded-l-md ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0"
             >
-              <span className="sr-only" >Previous</span>
+              <span className="sr-only">Previous</span>
 
               <button onClick={onLeftclick} disabled={currentPage == 1}>
                 <ChevronLeftIcon className="w-5 h-5" aria-hidden="true" />
@@ -113,7 +119,10 @@ export default function Pagination({
             >
               <span className="sr-only">Next</span>
 
-              <button onClick={onRightclick} disabled={currentPage == totalPages}>
+              <button
+                onClick={onRightclick}
+                disabled={currentPage == totalPages}
+              >
                 <ChevronRightIcon className="w-5 h-5" aria-hidden="true" />
               </button>
             </a>
