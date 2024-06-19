@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="relative overflow-hidden z-50 border-gray-200 bg-[#842029] dark:bg-gray-800 dark:border-gray-700">
+    <nav className="relative overflow-hidden z-50 h-[6%] border-gray-200 bg-[#842029] dark:bg-gray-800 dark:border-gray-700">
       <div className="flex flex-wrap justify-between items-center py-2 mx-auto max-w-screen-xl px-">
         <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
           <img

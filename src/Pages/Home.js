@@ -17,6 +17,7 @@ import "react-multi-carousel/lib/styles.css";
 import "./Home.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { Delete } from 'lucide-react';
 
 function Home() {
   const [telNumber, setTelNumber] = useState("");
@@ -90,7 +91,7 @@ function Home() {
   };
 
   return (
-    <div className=" overflow-hidden  w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
+    <div className=" overflow-hidden h-[96%] w-full flex text-center flex-col bg-cov bg-righ bg-no-repeat items-center justify-center text-4xl font-semibold bg-[#DDDDD]  ">
       <div className="w-full h-[20%]">
         <Carousel
           arrows={false}
@@ -100,34 +101,34 @@ function Home() {
           autoPlay={true}
           autoPlaySpeed={2000}
           infinite={true}
-          className="my-carousel"
+          className="my-carousel "
         >
           {[IMG1, IMG2, IMG3].map((v) => {})}
-          <div className="relative">
+          <div className="relative h-[100%]">
             <img
               src={IMG1}
               alt=""
-              className="absolute d-block w-full  h-[90px] md:h-[250px] object-cover "
+              className="obsolute d-block w-full  h-[100%] md:h-[250px] bg-cover "
             />
           </div>
-          <div className="relative">
+          <div className="relative h-[100%]">
             <img
               src={IMG2}
               alt=""
-              className="d-block w-full  h-[90px] md:h-[250px] obsolute bg-fit "
+              className="d-block w-full  h-[100%] md:h-[250px] obsolute bg-fit "
             />
           </div>
-          <div className="relative">
+          <div className="relative h-[100%]">
             <img
               src={IMG3}
               alt=""
-              className="obsolute d-block  w-full   h-[90px] md:h-[250px] object-cover  "
+              className="obsolute d-block  w-full   h-[100%] md:h-[250px] object-cover  "
             />
           </div>
         </Carousel>
       </div>
 
-      <div className="flex h-[70%] overflow-hidden relative flex-col justify-center items-center w-full">
+      <div className="flex h-[80%] overflow-hidden relative flex-col py-0 justify-center items-center w-full">
         <div className="absolute  hidden md:block  left-[-10px] bottom-0">
           <img
             src={bottom}
@@ -173,7 +174,7 @@ function Home() {
                   borderRadius: "10px",
                   boxShadow: `rgba(0, 0, 0, 0.4) 0px 5px 15px`,
                 }}
-                className="overflow-hidden mt-2 bg-white row"
+                className="overflow-hidden mt-2 bg-white row has-[80%]:"
               >
                 {/* <div style={{ borderRadius: '0.275rem' }} className="rounded-t-lg bg-slate-100">
                 <div className="pb-4 text-center viewall">
@@ -188,18 +189,18 @@ function Home() {
                 </div>
               </div> */}
 
-                <div className="text-center">
-                  <div className="flex flex-col justify-center items-center w-full bg-white shadow-lg col-md-12">
+                <div className="text-center h-[100%]">
+                  <div className="flex flex-col justify-center h-[100%] items-center w-full bg-white shadow-lg col-md-12">
                     <input
                       type="tel"
                       placeholder="Enter a number"
                       name="name"
                       id="telNumber"
-                      className="  px-4 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-4  md:mb-2  border-gray-900 rounded-none text-lg font-semibold  border-solid h-[45px] text-center bg-gray-50"
+                      className="  px-4 py-2 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-4  md:mb-2  border-gray-900 rounded-none text-lg font-semibold  border-solid  text-center bg-gray-50"
                       value={number}
                       min={0}
                       max={99}
-                      maxLength={2}
+                      
                       onKeyDown={(e) => {
                         if (e.key === "Enter") {
                           e.preventDefault(); // Prevent form submission
@@ -227,212 +228,211 @@ function Home() {
                         boxShadow: `rgba(0, 0, 0, 0.1) 1px 1px 7px 1px`,
                       }}
                     />
-                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2  justify-center items-center py-[10px]  p-2 md:mb-2 mt-1 md:mt-4">
+                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2 h-[80%]  justify-center items-center py-[30px]  p-2 md:mb-2 mt- md:mt-4">
                       <div
-                        className=""
+                        className="h-[20%]"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "1"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center   transition duration-200 ease-linear shadow-md bord bor rounded-sm md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white md:m-2 "
+                          className=" flex justify-center   items-center   transition duration-200 ease-linear shadow-md bord bor rounded-sm md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] font-bold md:text-2xl  text-black"
+                            className="text-center p-1 text-[34px] font-bold md:text-2xl  text-black"
                           >
                             1
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block span4 mx- h-[20%]"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "2"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center    items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             2
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block span4 h-[20%] mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "3"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center h-[70px]   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className="flex justify-center  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             3
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block span4 h-[20%] mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "4"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             4
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block span4 h-[20%] mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "5"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             5
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block h-[20%] span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "6"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             6
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block span4 h-[20%] mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "7"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             7
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block h-[20%] span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "8"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center h-[70px]  items-center  transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className="flex justify-center   items-center  transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             8
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block h-[20%] span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "9"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-black"
                           >
                             9
                           </div>
                         </div>
                       </div>
                       <div
-                        className="inline-block span4 mx-"
+                        className="inline-block h-[20%] span4 mx-"
                         onClick={() =>
                           setNumber((p) => (p.length >= 2 ? p : p + "0"))
                         }
                       >
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className="flex justify-center items-center h-[70px]  transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white md:m-2 "
+                          className="flex justify-center items-center   transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-lg md:p-4 bg-[#FBEBCC] bg-opacity-60 text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white md:m-2 "
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] font-bold md:text-2xl  text-black"
+                            className="text-center p-1 text-[34px] font-bold md:text-2xl  text-black"
                           >
                             0
                           </div>
                         </div>
                       </div>
-                      <div className="inline-block span4 mx-">
+                      <div className="inline-block h-[20%] span4 mx-">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
-                          <div
-                            style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-black"
-                            onClick={() => {
+                         
+                            <Delete className="text-center  p-1 text-[34px] h-[100%] md:text-2xl font-bold text-black"   onClick={() => {
                               setNumber((p) => p.substring(0, p.length - 1));
                             }}
-                          >
-                            Clear
-                          </div>
+                            style={{ fontWeight: "600" }}
+                            size={48}
+                            />
+                          
                         </div>
                       </div>
-                      <div className="mx-">
+                      <div className="h-[20%] mx-">
                         <div
                           style={{ borderRadius: "0.275rem" }}
-                          className=" flex justify-center h-[70px]  items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  md:m-2 "
+                          className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full md:p-4 bg-[#842029] text-gray-700 cursor-pointer hover:bg-gray-600 hover:text-white  md:m-2 "
                           onClick={onGoclick}
                         >
                           <div
                             style={{ fontWeight: "600" }}
-                            className="text-center p-2 text-[34px] md:text-2xl font-bold text-white"
+                            className="text-center p-1 text-[34px] md:text-2xl font-bold text-white"
                           >
                             Go
                           </div>
@@ -447,7 +447,7 @@ function Home() {
         </div>
 
 
-        <div className=" flex md:mt-[0px]   mb-[10px] md:mb-[28px] w-full h-[10%] justify-end">
+        <div className=" flex md:mt-[0px]   mb-[10px md:mb-[28px] w-full h-[10%] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {share && (
               <div className="flex items-center justify-center md:justify-between bg-white h-full my-[5px] py-[10px] px-[10px] cursor-pointer w-[70%] md:w-[30%] md:mr-[0px] mr-[30px] rounded-md shadow-md  transition duration-200">
