@@ -19,7 +19,7 @@ function App() {
             <Link to='/about3'>About3</Link>
            </nav>   */}
         
-        <div className="">
+        <div className=" h-screen">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
