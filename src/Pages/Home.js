@@ -228,7 +228,7 @@ function Home() {
                         boxShadow: `rgba(0, 0, 0, 0.1) 1px 1px 7px 1px`,
                       }}
                     />
-                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2 h-[80%]  justify-center items-center py-[30px]  p-2 md:mb-2 mt- md:mt-">
+                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2 h-[80%]  justify-center items-center py-[30px  p-2 md:mb-7 mb-5 md:mt-">
                       <div
                         className="h-[20%]"
                         onClick={() =>
@@ -447,7 +447,7 @@ function Home() {
         </div>
 
 
-        <div className=" flex md:mt-[0px]   mt-[5px] md:mb-[28px] w-full h-[10%] justify-end">
+        <div className=" flex md:mt-[0px]   mt-[3px] md:mb-[28px] w-full h-[10%] justify-end">
           <div className="w-[30%]  flex flex-col  justify-end items-end ml-[0px] md:mr-[20px]">
             {share && (
               <div className="flex items-center justify-center md:justify-between bg-white h-full my-[5px] py-[10px] px-[10px] cursor-pointer w-[70%] md:w-[30%] md:mr-[0px] mr-[30px] rounded-md shadow-md  transition duration-200">
