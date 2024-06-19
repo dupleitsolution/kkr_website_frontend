@@ -196,7 +196,7 @@ function Home() {
                       placeholder="Enter a number"
                       name="name"
                       id="telNumber"
-                      className="  px-4 py-2 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-4  md:mb-2  border-gray-900 rounded-none text-lg font-semibold  border-solid  text-center bg-gray-50"
+                      className="  px-4 py-2 w-[91%] placeholder:opacity-100 placeholder:font-normal  placeholder:text-gray focus:outline-none focus:border-blue-500 mt-4  md:mb-  border-gray-900 rounded-none text-lg font-semibold  border-solid  text-center bg-gray-50"
                       value={number}
                       min={0}
                       max={99}
@@ -228,7 +228,7 @@ function Home() {
                         boxShadow: `rgba(0, 0, 0, 0.1) 1px 1px 7px 1px`,
                       }}
                     />
-                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2 h-[80%]  justify-center items-center py-[30px]  p-2 md:mb-2 mt- md:mt-4">
+                    <div className=" w-full grid grid-cols-3 gap-4 md:gap-2 h-[80%]  justify-center items-center py-[30px]  p-2 md:mb-2 mt- md:mt-">
                       <div
                         className="h-[20%]"
                         onClick={() =>
