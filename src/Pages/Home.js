@@ -128,7 +128,7 @@ function Home() {
         </Carousel>
       </div>
 
-      <div className="flex h-[80%] overflow-hidden relative flex-col py-0 justify-center items-center w-full">
+      <div className="flex h-[80%] md:h-auto overflow-hidden relative flex-col py-0 justify-center items-center w-full">
         <div className="absolute  hidden md:block  left-[-10px] bottom-0">
           <img
             src={bottom}
@@ -415,11 +415,11 @@ function Home() {
                           className=" flex justify-center   items-center transition duration-200 ease-linear shadow-md borde border-gray-400 rounded-full md:p-4 bg-[#DDDDDD] text-gray-700 cursor-pointer hover:bg-[#D1C2AA] hover:text-white  md:m-2 "
                         >
                          
-                            <Delete className="text-center  p-1 text-[34px] h-[100%] md:text-2xl font-bold text-black"   onClick={() => {
+                            <Delete className="text-center my-[4px] md:my-[0px] p-1 text-[34px] h-[100%] md:text-2xl font-bold text-black"   onClick={() => {
                               setNumber((p) => p.substring(0, p.length - 1));
                             }}
                             style={{ fontWeight: "600" }}
-                            size={48}
+                            size={40}
                             />
                           
                         </div>
